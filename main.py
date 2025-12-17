@@ -56,7 +56,7 @@ def load_data():
             current_questions = {}
     except Exception as e:
         print(f"Error loading current_questions: {e}")
-current_questions = {}
+        current_questions = {}
     
     # Load question_answered
     try:
@@ -3702,7 +3702,7 @@ async def leaderboard(ctx):
 async def commands(ctx):
     await ctx.send('**Commands**\n-q <subject> (phy, bio, chem, math, ess, energy)- Ask a question\n-a <answer> - Check your answer\n-points - Check your points\n-leaderboard - Check the leaderboard')
 
-token = os.getenv('DISCORD_BOT_TOKEN')
+token = str(os.getenv('DISCORD_BOT_TOKEN'))
 if not token:
     print('Error: DISCORD_BOT_TOKEN environment variable is not set!')
     print('Please set it using: export DISCORD_BOT_TOKEN="your_token_here"')
