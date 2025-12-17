@@ -113,7 +113,497 @@ def save_data():
     except Exception as e:
         print(f"Error saving user_points: {e}")
 
-questions = {'phy': [{'q': 'PHYSICS Short Answer: Planck was able to describe the color change of black bodies at different '
+questions = {'phy': [{'q': 'PHYSICS Multiple Choice: Which of the following thermodynamic properties is a path function?\n'
+               'W) Energy\n'
+               'X) Enthalpy [EN-thul-pee]\n'
+               'Y) Entropy [EN-troh-pee]\n'
+               'Z) Work',
+          'a': 'Z'},
+         {'q': 'PHYSICS Short Answer: A particle has a position defined by the equation x = 3t + 18. What is the '
+               'acceleration of the particle at t = 5?',
+          'a': 'ZERO'},
+         {'q': 'PHYSICS Short Answer: The electric force on a point charge as a result of another charge is given as '
+               'M. If the distance between the two particles is halved, what is the new force on the point charge?',
+          'a': '4M'},
+         {'q': 'PHYSICS Multiple Choice: Which of the following is closest to the amount of energy, in joules [jools], '
+               'carried by a mole of photons with a wavelength of one micrometer?\n'
+               'W) 12,000\n'
+               'X) 24,000\n'
+               'Y) 120,000\n'
+               'Z) 240,000',
+          'a': 'Y'},
+         {'q': 'PHYSICS Multiple Choice: Which of the following is not a logical corollary to special relativity?\n'
+               'W) Time dilation\n'
+               'X) Relativity of simultaneity\n'
+               'Y) Curvature of spacetime\n'
+               'Z) Length contraction',
+          'a': 'Y'},
+         {'q': 'PHYSICS Short Answer: What effect describes the inelastic scattering of photons by free charged '
+               'particles?',
+          'a': 'COMPTON EFFECT'},
+         {'q': 'PHYSICS Short Answer: The maximal increase in the velocity of an ideal rocket is linearly proportional '
+               'to what property of the rocket?',
+          'a': 'EXHAUST VELOCITY'},
+         {'q': 'PHYSICS Short Answer: Bill’s weight on a theoretical perfectly spherical Earth is 700 newtons. If Bill '
+               'stood on the surface of a planet with the same mass and radius as Earth, but that was shaped as a '
+               'hollow sphere with thickness 60 kilometers, what is Bill’s new weight, in newtons to one significant '
+               'figure?',
+          'a': '700'},
+         {'q': 'PHYSICS Multiple Choice: Which of the following thermodynamic properties is not a state function?\n'
+               'W) Energy\n'
+               'X) Enthalpy [EN-thul-pee]\n'
+               'Y) Heat\n'
+               'Z) Entropy [EN-troh-pee]',
+          'a': 'Y'},
+         {'q': 'PHYSICS Short Answer: What principle in physics states that pressure changes on an incompressible, '
+               'enclosed, static fluid are evenly distributed?',
+          'a': "PASCAL'S LAW"},
+         {'q': 'PHYSICS Short Answer: Given a graph with acceleration on the y-axis and time on the x-axis, what '
+               'physical quantity does the area under the curve represent?',
+          'a': 'VELOCITY'},
+         {'q': 'PHYSICS Multiple Choice: If one left-circularly polarized laser beam and one right-circularly '
+               'polarized laser beam with the same amplitude and frequency are combined into a single beam, what is '
+               'the polarization of the resulting beam?\n'
+               'W) Circular\n'
+               'X) Elliptical\n'
+               'Y) Linear\n'
+               'Z) Unpolarized',
+          'a': 'Y'},
+         {'q': 'PHYSICS Multiple Choice: A 10,000-kilogram truck is rolling at 2 meters per second when 5000 kilograms '
+               "of cargo is dropped into it. Which of the following, in meters per second, is closest to the truck's "
+               'speed afterwards?\n'
+               'W) 1\n'
+               'X) 1.3\n'
+               'Y) 1.5\n'
+               'Z) 2',
+          'a': 'X'},
+         {'q': 'PHYSICS Short Answer: Identify all of the following three statements that are true of light: 1) '
+               'Diffraction is an example of the wave-nature of light; 2) Interference is an example of the '
+               'wave-nature of light; 3) The energy carried by light is directly proportional to frequency.',
+          'a': 'ALL'},
+         {'q': 'PHYSICS Short Answer: In a viscous fluid, what is the type of flow characterized by having layers of '
+               'currents that are all parallel to the flow?',
+          'a': 'LAMINAR'},
+         {'q': 'PHYSICS Short Answer: An ideal pendulum has a period of 1 second. If its mass is multiplied by 3 and '
+               'its length is multiplied by 4, in seconds, what is the new period of the pendulum?',
+          'a': '2'},
+         {'q': 'PHYSICS Multiple Choice: If a constant force is applied to an object, which of the following '
+               'quantities must also be constant?\n'
+               'W) Position\n'
+               'X) Acceleration\n'
+               'Y) Velocity\n'
+               'Z) Speed',
+          'a': 'X'},
+         {'q': 'PHYSICS Short Answer: A Carnot engine is operating between a hot reservoir at 125 degrees Celsius and '
+               'a cold reservoir at 25 degrees Celsius. If the engine extracts 600 joules [jools] from the hot '
+               'reservoir, to two significant figures and in joules [jools], how much heat is discarded as waste per '
+               'cycle?',
+          'a': '450'},
+         {'q': 'PHYSICS Short Answer: A circuit contains a 6-volt battery and a 2-ohm resistor. What is the power, in '
+               'watts, of this circuit?',
+          'a': '18'},
+         {'q': 'PHYSICS Multiple Choice: If an electron in a hydrogen atom decays to emit a photon, which of the '
+               'following transitions emits the longest wavelength photon?\n'
+               'W) First excited state to ground state\n'
+               'X) Second excited state to ground state\n'
+               'Y) Second excited state to first excited state\n'
+               'Z) Third excited state to first excited state',
+          'a': 'Y'},
+         {'q': 'PHYSICS Multiple Choice: For which of the following is Erwin Schrodinger most famous?\n'
+               'W) Describing how wavefunctions change over time\n'
+               'X) Discovering that electrons occupy energy levels in atoms\n'
+               'Y) Discovering that atoms contain a positively charged nucleus\n'
+               'Z) Discovering nuclear fission',
+          'a': 'W'},
+         {'q': 'PHYSICS Short Answer: Identify all of the following three statements that are true of semiconductors: '
+               '1) Silicon dioxide is a semiconductor; 2) Silicon is commonly used as a semiconductor; 3) LEDs can be '
+               'made of semiconductors.',
+          'a': '2 AND 3'},
+         {'q': 'PHYSICS Short Answer: A hydraulic press has two ends that are level but have different areas. Identify '
+               'all of the following 4 quantities that may have differing magnitudes at the two ends: 1) Force; 2) '
+               'Work; 3) Displacement;\n'
+               '4) Pressure.',
+          'a': '1 AND 3'},
+         {'q': 'PHYSICS Short Answer: Identify all of the following 3 classes of levers that are capable of producing '
+               'a mechanical advantage greater than unity: 1) Class 1; 2) Class 2; 3) Class 3.',
+          'a': '1 AND 2'},
+         {'q': 'PHYSICS Multiple Choice: Uniform circular motion is achieved by applying force in what direction?\n'
+               'W) Toward the center of rotation\n'
+               'X) Away from the center of rotation\n'
+               'Y) In the direction of motion\n'
+               'Z) Against the direction of motion',
+          'a': 'W'},
+         {'q': 'PHYSICS Short Answer: What radioactive isotope of carbon is prominently used in radiometric dating?',
+          'a': 'CARBON-14'},
+         {'q': 'PHYSICS Short Answer: On a standing wave, what term refers to the points at which the amplitude is '
+               'maximized?',
+          'a': 'ANTI-NODE'},
+         {'q': 'PHYSICS Short Answer: Suppose the Earth’s radius were decreased by half but its mass remained the '
+               'same. To one decimal place, by what factor will the surface escape velocity be multiplied?',
+          'a': '1.4'},
+         {'q': 'PHYSICS Multiple Choice: What thermodynamic cycle describes a jet turbine?\n'
+               'W) Rankine\n'
+               'X) Carnot\n'
+               'Y) Brayton\n'
+               'Z) Otto',
+          'a': 'Y'},
+         {'q': 'PHYSICS Short Answer: Identify all of the following three statements that are true of the physics of '
+               'the Big Bang:\n'
+               '1) The Big Bang is consistent with the observations made by Hubble; 2) The Big Bang produced mostly '
+               'oxygen and carbon; 3) The leftover energy from the Big Bang is no longer detectable.',
+          'a': '1'},
+         {'q': 'PHYSICS Short Answer: What is the term for the quasiparticles present in p-type semiconductors that '
+               'represent the absence of electrons?',
+          'a': 'HOLES'},
+         {'q': 'PHYSICS Short Answer: What is the wavelength, as a fraction of the length of the box, of the third '
+               'excited state of a one-particle one-dimensional particle in a box?',
+          'a': '1/2'},
+         {'q': 'PHYSICS Short Answer: Two billiard balls of equal mass are travelling collinearly in opposite '
+               'directions. One has a velocity of 5 meters per second, the other has a velocity of 3 meters per '
+               'second. They collide completely inelastically. In meters per second, what is their final speed?',
+          'a': 'ONE'},
+         {'q': 'PHYSICS Short Answer: A 3-volt battery is connected to two 4-ohm resistors that are connected in '
+               'parallel. What is the power, in watts, dissipated by this circuit?',
+          'a': '4.5'},
+         {'q': 'PHYSICS Short Answer: Most room-temperature permanent magnets are magnets due to what phenomenon that '
+               'is commonly seen in iron, nickel, and cobalt?',
+          'a': 'FERROMAGNETISM'},
+         {'q': 'PHYSICS Short Answer: An atom of uranium-235 at rest undergoes spontaneous nuclear fission to form '
+               'krypton-94 and barium-141. If the barium atom moves away at 4 kilometers per second, what is the '
+               'speed, to the nearest kilometer per second, of the krypton atom?',
+          'a': '6'},
+         {'q': 'PHYSICS Multiple Choice: Capillary action refers to which of the following?\n'
+               'W) The tendency for objects to flee the center of circular motion\n'
+               'X) The change in frequency of a wave depending on the relative motion of the source\n'
+               'Y) The property by which liquids can flow against gravity\n'
+               'Z) The tendency for fluids to dissipate energy as heat',
+          'a': 'Y'},
+         {'q': 'PHYSICS Short Answer: What is the name of the law of electromagnetism that states that the force '
+               'exerted on each other by two charged particles is inversely proportional to the square of the distance '
+               'between them?',
+          'a': "COULOMB'S LAW"},
+         {'q': 'PHYSICS Short Answer: A 1000-kilogram car traveling at 15 meters per second takes a turn on a flat '
+               'surface with a radius of 50 meters. In kilo-newtons, what is the force of friction on the car?',
+          'a': '4.5'},
+         {'q': 'PHYSICS Short Answer: A 50-kilogram superhero is standing on a frictionless surface. He fires a '
+               '100-gram arrow horizontally at a speed of 200 meters per second at a target. In meters per second, '
+               'what is his speed afterwards?',
+          'a': '0.4'},
+         {'q': 'PHYSICS Short Answer: A proton is traveling counterclockwise in a circle in the x = 0 plane. In what '
+               'direction is its magnetic field vector?',
+          'a': 'POSITIVE X'},
+         {'q': 'PHYSICS Short Answer: What is the adjective for the type of materials that will create an induced '
+               'magnetic field opposite to an externally applied magnetic field?',
+          'a': 'DIAMAGNETIC'},
+         {'q': 'PHYSICS Short Answer: What type of circuits, which include types such as high-pass and low-pass '
+               'filters, are composed of a resistor and a capacitor?',
+          'a': 'RC CIRCUIT'},
+         {'q': 'PHYSICS Short Answer: An object’s position x as a function of time t is: x of t equals t cubed minus t '
+               'squared plus 3t plus 5. What is the object’s acceleration at time 2?',
+          'a': '10'},
+         {'q': 'PHYSICS Multiple Choice: A mass on a spring oscillates at a frequency of 200 hertz, creating a '
+               'low-pitch sound.\n'
+               'Which of the following can be done to increase the frequency of the sound produced?\n'
+               'W) Increase the mass\n'
+               'X) Use a stiffer spring\n'
+               'Y) Approach the mass-spring system at a high speed\n'
+               'Z) Remove the air in the room',
+          'a': 'X'},
+         {'q': 'PHYSICS Short Answer: Identify all of the following three particles that are leptons:\n'
+               '1) Neutrino; 2) Gluon; 3) Positron.',
+          'a': '1 AND 3'},
+         {'q': 'PHYSICS Short Answer: An engine does 15 joules of work while exhausting 35 joules of waste heat. What '
+               'is the percent efficiency of the engine?',
+          'a': '30'},
+         {'q': 'PHYSICS Short Answer: In classical mechanics, impulse can be calculated by finding the area under the '
+               'curve on a graph of force versus what quantity?',
+          'a': 'TIME'},
+         {'q': 'PHYSICS Short Answer: What is the largest resonant wavelength, in meters, for sound waves in a 1-meter '
+               'tube that is closed on one end?',
+          'a': '4'},
+         {'q': 'PHYSICS Multiple Choice: The global positioning system uses corrections to account for special and '
+               'general relativistic effects. Which of the following is closest to the daily positional deviation that '
+               'would result if these corrections were not accounted for?\n'
+               'W) 1 centimeter\n'
+               'X) 1 meter\n'
+               'Y) 100 meters\n'
+               'Z) 10 kilometers',
+          'a': 'Z'},
+         {'q': 'PHYSICS Multiple Choice: Which of the following correctly describes a magnifying glass?\n'
+               'W) Single convex lens\n'
+               'X) Two convex lenses\n'
+               'Y) Single concave lens\n'
+               'Z) Two concave lenses',
+          'a': 'W'},
+         {'q': 'PHYSICS Multiple Choice: A bicyclist goes over the top of a hill with a radius of 50 meters. Which of '
+               'the following is closest to the maximum speed, in meters per second, the cyclist can have without '
+               'leaving the ground at the top of the hill?\n'
+               'W) 11\n'
+               'X) 22\n'
+               'Y) 33\n'
+               'Z) 44',
+          'a': 'X'},
+         {'q': 'PHYSICS Multiple Choice: Which of the following are proper units for entropy [EN-troh-pee]?\n'
+               'W) Joules [jools]\n'
+               'X) Kelvins per joule\n'
+               'Y) Joules per kelvin\n'
+               'Z) Joule-kelvins',
+          'a': 'Y'},
+         {'q': 'PHYSICS Short Answer: An observer is moving at 50 meters per second towards a stationary source that '
+               'is emitting a wave with velocity 100 meters per second. What is the ratio of the observed frequency to '
+               'the transmitted frequency before the observer passes the source?',
+          'a': '3/2'},
+         {'q': 'PHYSICS Short Answer: What is the mechanical advantage of a 3.5-foot lever if the fulcrum is located 6 '
+               'inches from one end?',
+          'a': 'SIX'},
+         {'q': 'PHYSICS Short Answer: A piano string is tuned to A440. To two significant figures and in milliseconds, '
+               'what is the period of vibration of this string?',
+          'a': '2.3'},
+         {'q': 'PHYSICS Short Answer: For a particle in an infinite square potential well, how many nodes exist in the '
+               'wavefunction within the well, not including the walls, in the third excited state?',
+          'a': '3'},
+         {'q': 'PHYSICS Multiple Choice: The external presence of which of the following would result in the forward '
+               'bias of a p-n junction?\n'
+               'W) Electric field directed toward the p region\n'
+               'X) Electric field directed toward the n region\n'
+               'Y) Magnetic field directed toward the p region\n'
+               'Z) Magnetic field directed toward the n region',
+          'a': 'X'},
+         {'q': 'PHYSICS Short Answer: Identify all of the following three statements that could be true of a particle '
+               'undergoing constant acceleration: 1) Zero instantaneous velocity; 2) Quadratic increase in velocity; '
+               '3) Quadratic increase in position.',
+          'a': '1 AND 3'},
+         {'q': 'PHYSICS Multiple Choice: Which of the following elements is useful as an isotope label due to the two '
+               'most common isotopes having 1 to 1 relative abundance?\n'
+               'W) Hydrogen\n'
+               'X) Chlorine\n'
+               'Y) Bromine [BROH-meen]\n'
+               'Z) Iodine',
+          'a': 'Y'},
+         {'q': 'PHYSICS Multiple Choice: Which of the following laws is NOT always true in electrical circuits?\n'
+               "W) Ohm's Law\n"
+               "X) Coulomb's Law\n"
+               "Y) Kirchoff's 1st Law\n"
+               "Z) Faraday's Law of Induction",
+          'a': 'W'},
+         {'q': 'PHYSICS Short Answer: Three resistors are in parallel and have resistances of X, X, and 200 ohms. The '
+               'equivalent resistance of the circuit is 75 ohms. What is the value of X, in ohms?',
+          'a': '240'},
+         {'q': 'PHYSICS Short Answer: A car brakes to a stop over 15 meters, applying a constant force of 800 newtons '
+               'to the car.\n'
+               'In joules, what was the initial kinetic energy of the car?',
+          'a': '12,000'},
+         {'q': 'PHYSICS Short Answer: A block attached to a spring is experiencing simple harmonic motion with a '
+               'period of 4.0 seconds. What would the period be, in seconds to two significant figures, if the mass of '
+               'the block was halved?',
+          'a': '2.8'},
+         {'q': 'PHYSICS Short Answer: In classical optics, diffraction is a phenomenon that can be described as '
+               'intereference according to what principle?',
+          'a': "HUYGEN'S PRINCIPLE"},
+         {'q': 'PHYSICS Short Answer: What rule states that if an energy level contains several degenerate orbitals, '
+               'the orbitals must all be singly filled before any of them can be doubly filled?',
+          'a': "HUND'S RULE"},
+         {'q': 'PHYSICS Short Answer: What dimensionless physical constant is equal to the square of the ratio of the '
+               'charge of the electron to the Planck charge?',
+          'a': 'FINE STRUCTURE CONSTANT'},
+         {'q': 'PHYSICS Short Answer: A cyclist is decelerating at 2.5 meters per second squared. If at point A, she '
+               'is traveling at 8 meters per second and at point B, she is traveling at 5 meters per second, how long, '
+               'in seconds, did it take her to travel from point A to B?',
+          'a': '1.2'},
+         {'q': 'PHYSICS Short Answer: An ideal ammeter is connected to a 1.5-volt battery and it reads 2 amps. How '
+               'much power, in watts, is dissipated by the internal resistence of the battery?',
+          'a': '3'},
+         {'q': 'PHYSICS Short Answer: How much more power does a 40-decibel sound deliver than a 20-decibel sound?',
+          'a': '100'},
+         {'q': 'PHYSICS Multiple Choice: Which of the following circuits with two components will behave as an '
+               'electrical resonator?\n'
+               'W) resistor and capacitor\n'
+               'X) resistor and inductor\n'
+               'Y) capacitor and inductor\n'
+               'Z) capacitor and capacitor',
+          'a': 'Y'},
+         {'q': 'PHYSICS Short Answer: The temperature is 27 degrees Celsius outdoors and 17 degrees Celsius indoors. '
+               'To the nearest whole number, what is the maximal coefficient of performance that could be attained by '
+               'an ideal air conditioner?',
+          'a': '30'},
+         {'q': 'PHYSICS Short Answer: A car is traveling around a circular track in uniform circular motion. Identify '
+               'all of the following three quantities that are constant for the car: 1) Angular velocity; 2) '
+               'Acceleration; 3) Radial velocity.',
+          'a': '1'},
+         {'q': 'PHYSICS Short Answer: What is the name of the principle that states that the lowest energy orbitals of '
+               'an atom are filled before higher energy ones?',
+          'a': 'AUFBAU PRINCIPLE'},
+         {'q': 'PHYSICS Multiple Choice: A swinging door is opened to +80 degrees, and released. It swings to -40 '
+               'degrees, then back to +20 degrees and so on before eventually reaching rest at 0 degrees. This '
+               'oscillatory behavior can be best described as which of the following?\n'
+               'W) Underdamped\n'
+               'X) Critically damped\n'
+               'Y) Overdamped\n'
+               'Z) Undamped',
+          'a': 'W'},
+         {'q': 'PHYSICS Short Answer: Protons and neutrons are made up of what two quarks?', 'a': 'UP AND DOWN'},
+         {'q': 'PHYSICS Short Answer: What compound of uranium in the uranium fuel cycle is polyfluorinated '
+               '[polly-FLOOR-in-ated] and gaseous?',
+          'a': 'UF6'},
+         {'q': 'PHYSICS Short Answer: A square conducting loop that has sides of length 10 centimeters is pulled out '
+               'of a 5-tesla magnetic field at 1 meter per second. What is the magnitude of the induced EMF, in volts, '
+               'in the loop while it is leaving the magnetic field?',
+          'a': '0.5'},
+         {'q': 'PHYSICS Short Answer: How many vibrational degrees of freedom does a linear triatomic gas molecule '
+               'possess?',
+          'a': 'FOUR'},
+         {'q': 'PHYSICS Short Answer: For an ideal gas, identify all of the following 3 properties that, when '
+               'increased alone, would increase the mean free path of a gas molecule: 1) Pressure; 2) Temperature; 3) '
+               'Collision area.',
+          'a': '2'},
+         {'q': 'PHYSICS Short Answer: Identify all of the following 3 changes that would increase the magnetic field '
+               'outside an ideal solenoid of infinite length: 1) Increasing current strength; 2) Increasing turn '
+               'density; 3) Adding an iron core.',
+          'a': 'NONE'},
+         {'q': 'PHYSICS Short Answer: What mineral is commonly used in watch crystals and radio transmitters due to '
+               'its piezoelectric properties?',
+          'a': 'QUARTZ'},
+         {'q': 'PHYSICS Short Answer: Modulo a dimensionless constant, the Heisenberg uncertainty principle relates '
+               'the products of momentum and positional uncertainties to what constant?',
+          'a': 'PLANCK’S CONSTANT'},
+         {'q': 'PHYSICS Short Answer: In the Grand Unified Theory, which of its three unified forces separates from '
+               'the other two earliest on?',
+          'a': 'STRONG'},
+         {'q': 'PHYSICS Multiple Choice: In inductors, the back EMF generated most directly depends on which of the '
+               'following properties of the circuit?\n'
+               'W) Voltage\n'
+               'X) Time derivative of voltage\n'
+               'Y) Current\n'
+               'Z) Time derivative of current',
+          'a': 'Z'},
+         {'q': 'PHYSICS Short Answer: In an electromagnetic motor, what conductive component generates an '
+               'electromotive force?',
+          'a': 'ARMATURE'},
+         {'q': 'PHYSICS Short Answer: What is the name for the device Michelson and Morley used to disprove the '
+               'existence of luminiferous aether?',
+          'a': 'INTERFEROMETER'},
+         {'q': 'PHYSICS Short Answer: A hydrogen atom is in its 4th excited state. What is the value of its principal '
+               'quantum number n?',
+          'a': '5'},
+         {'q': 'PHYSICS Short Answer: A Wheatstone Bridge is used to measure what property of electrical circuit '
+               'components?',
+          'a': 'RESISTANCE'},
+         {'q': 'PHYSICS Short Answer: Using the harmonic oscillator model, and assuming the force constant is '
+               'unchanged between the two molecules, what is the ratio of the fundamental vibrational frequency of '
+               'hydrogen to that of deuterium?',
+          'a': '√2'},
+         {'q': 'PHYSICS Multiple Choice: The photoelectric effect reveals what property of photons?\n'
+               'W) Wave-like nature\n'
+               'X) Particle-like nature\n'
+               'Y) Wave-particle duality\n'
+               'Z) Masslessness',
+          'a': 'X'},
+         {'q': 'PHYSICS Short Answer: In quantum mechanics, the operator for momentum is represented by a derivative '
+               'with respect to what quantity?',
+          'a': 'POSITION'},
+         {'q': 'PHYSICS Multiple Choice: A 70-kilogram student is walking at 1 meter per second. Which of the '
+               'following is closest to her de Broglie wavelength, in meters?\n'
+               'W) 10-34\n'
+               'X) 10-35\n'
+               'Y) 10-36\n'
+               'Z) 10-37',
+          'a': 'X'},
+         {'q': 'PHYSICS Short Answer: Einstein won the Nobel Prize in Physics for his description of what phenomenon?',
+          'a': 'PHOTOELECTRIC EFFECT'},
+         {'q': 'PHYSICS Short Answer: If the ratio of the lengths of two pendulums is 1:4, what is the ratio of the '
+               'frequency of the longer to that of the shorter?',
+          'a': '1:2'},
+         {'q': 'PHYSICS Short Answer: Radiation from a hypothetical blue dwarf is peaked at a wavelength of 250 '
+               'nanometers. A spaceship travelling away from the star at 0.6c observes a spectrum peaked at what '
+               'wavelength, in nanometers?',
+          'a': '500'},
+         {'q': 'PHYSICS Short Answer: If the radial dependence of the electric field of a monopole is 1/r2, what is '
+               'the long range radial dependence of an electric dipole?',
+          'a': '1/r3'},
+         {'q': 'PHYSICS Short Answer: A weight is sinking in a fluid. The drag force on the weight is equal to a '
+               'constant times its velocity squared times the density of the fluid. In SI base units, give the '
+               'dimensions of the constant.',
+          'a': 'METERS SQUARED'},
+         {'q': 'PHYSICS Short Answer: Compton scattering is the scattering of X-ray photons from what particle?',
+          'a': 'ELECTRON'},
+         {'q': 'PHYSICS Multiple Choice: Which of the following is closest to the half-life of a free neutron?\n'
+               'W) 1 second\n'
+               'X) 10 minutes\n'
+               'Y) 100 hours\n'
+               'Z) 1000 years',
+          'a': 'X'},
+         {'q': 'PHYSICS Short Answer: By what phenomenon can materials emit electrons in response to incident light?',
+          'a': 'PHOTOELECTRIC EFFECT'},
+         {'q': 'PHYSICS Short Answer: CPT symmetry is a fundamental concept of nuclear science and theoretical '
+               'physics. What do the C, P, and T stand for?',
+          'a': 'CHARGE CONJUGATION'},
+         {'q': 'PHYSICS Short Answer: Identify all of the following three particles that, according to the standard '
+               'model, can be affected by gravity: 1) Electron; 2) Pion; 3) Gluon.',
+          'a': '1 AND 2'},
+         {'q': 'PHYSICS Short Answer: In fluorescence microscopy, energy from absorbed photons is re-emitted as new '
+               'photons. If the new photons have only two-thirds of the momentum of the absorbed photons, what is the '
+               'ratio of the wavelength of the new photons to that of the absorbed photons?',
+          'a': '1.5'},
+         {'q': "PHYSICS Short Answer: Kirchhoff's loop rule is a consequence of what conservation principle?",
+          'a': 'CONSERVATION OF ENERGY'},
+         {'q': 'PHYSICS Short Answer: A spacecraft approaches Jupiter head-on for a gravitational slingshot maneuver. '
+               'Jupiter has an orbital velocity of 13 kilometers per second. If the spacecraft was originally moving '
+               'at 20 kilometers per second, what is the maximal final speed, in kilometers per second, it can attain?',
+          'a': '46'},
+         {'q': 'PHYSICS Short Answer: What is the minimum number of photons created in an electron-positron '
+               'annihilation in free space?',
+          'a': '2'},
+         {'q': 'PHYSICS Short Answer: Because of observed neutrino oscillation, what property of the neutrino must be '
+               'non-zero?',
+          'a': 'MASS'},
+         {'q': 'PHYSICS Short Answer: In an RLC circuit, the resonance frequency is defined to be at the point at '
+               'which what quantity is minimized?',
+          'a': 'IMPEDENCE'},
+         {'q': 'PHYSICS Short Answer: A 50-centimeter-long wire with mass 10 grams is suspended horizontally from a '
+               'ceiling, parallel to the x-axis. There is a uniform 1-tesla magnetic field oriented in the y '
+               'direction. Assuming gravity is 10 meters per second squared, what is the magnitude of the current, in '
+               'amperes to the nearest tenth, that the wire must carry in order to experience no net force?',
+          'a': '0.2'},
+         {'q': 'PHYSICS Short Answer: Charged-coupled devices and complementary metal oxide sensors are devices '
+               'typically used to detect what?',
+          'a': 'LIGHT'},
+         {'q': 'PHYSICS Multiple Choice: The resulting kinetic energy of an ejected photo-electron is NOT determined '
+               'by which of the following?\n'
+               'W) Speed of light\n'
+               'X) Energy of light\n'
+               'Y) Work function of the metal\n'
+               'Z) Light intensity',
+          'a': 'Z'},
+         {'q': 'PHYSICS Short Answer: What is the name of the low-temperature state characterized by zero resistance '
+               'transport of electron pairs?',
+          'a': 'SUPERCONDUCTIVITY'},
+         {'q': 'PHYSICS Short Answer: Most ships are more stable in a capsized rather than upright state. Order the '
+               'following points from bottom-most to top-most for an upright, metastable ship: 1) Center of gravity; '
+               '2) Center of buoyancy; 3) Metacenter.',
+          'a': '2, 1, 3'},
+         {'q': 'PHYSICS Short Answer: How much work, in joules [jools], is done on a particle of charge 2 coulombs as '
+               'it accelerates over a distance of 1 meter in an electric field of strength 9 volts per meter?',
+          'a': '18'},
+         {'q': "PHYSICS Multiple Choice: Which of the following conservation laws is related by Noether's theorem to "
+               'translational spatial symmetry?\n'
+               'W) Conservation of mass\n'
+               'X) Conservation of linear momentum\n'
+               'Y) Conservation of angular momentum\n'
+               'Z) Conservation of electric charge',
+          'a': 'X'},
+         {'q': "PHYSICS Short Answer: The precession of Mercury's orbit about the sun presented an anomaly for the "
+               'scientists that observed it. What theory correctly predicted the magnitude of precession each year?',
+          'a': 'GENERAL RELATIVITY'},
+         {'q': 'PHYSICS Short Answer: A charged conducting sphere is connected by a long, thin conducting wire to an '
+               'uncharged conducting sphere that has half the radius of the first sphere. After some time has passed, '
+               'what fraction of the original charge remains on the first sphere?',
+          'a': '2/3'},
+         {'q': 'PHYSICS Short Answer: What quark was most recently discovered?', 'a': 'TOP QUARK'},
+         {'q': 'PHYSICS Short Answer: If an electron is moving in the positive-x direction with increasing speed, '
+               'identify all of the following three scenarios that could be responsible for the driving force: 1) A '
+               'magnetic field pointing in the negative-x direction; 2) An electric field pointing in the negative-x '
+               'direction; 3) A magnetic field pointing in the negative-z direction.',
+          'a': '2'}, {'q': 'PHYSICS Short Answer: Planck was able to describe the color change of black bodies at different '
                'temperatures by introducing what concept?',
           'a': 'QUANTUM'},
          {'q': 'PHYSICS Short Answer: A horizontal force of 90 newtons is applied to a 20-kilogram block that is '
@@ -1248,8 +1738,1108 @@ questions = {'phy': [{'q': 'PHYSICS Short Answer: Planck was able to describe th
             {'q': 'ENERGY Short Answer: Recent work at Lawrence Berkeley National Laboratory has linked what metal to '
                   "the health of the brain, showing that improper oxidation is not only linked to Alzheimer's disease, "
                   'but also that it modulates spontaneous activity in developing circuits?',
-             'a': 'COPPER'}],
- 'chem': [{'q': 'CHEMISTRY Short Answer: Given the percentages by mass of different elements in a compound, identify '
+             'a': 'COPPER'}, {'q': 'ENERGY Multiple Choice: Into which of the following products is the largest percentage of a barrel '
+                  'of oil refined?\n'
+                  'W) Gasoline\n'
+                  'X) Heating oil\n'
+                  'Y) Jet fuel\n'
+                  'Z) Diesel',
+             'a': 'W'},
+            {'q': 'ENERGY Multiple Choice: In the U.S., which of the following sectors uses the most biomass energy '
+                  'per year?\n'
+                  'W) Industrial\n'
+                  'X) Transportation\n'
+                  'Y) Commercial\n'
+                  'Z) Residential',
+             'a': 'W'},
+            {'q': 'ENERGY Multiple Choice: Most lignite mined in the United States comes from what state?\n'
+                  'W) California\n'
+                  'X) Wisconsin\n'
+                  'Y) Texas\n'
+                  'Z) Pennsylvania',
+             'a': 'Y'},
+            {'q': 'ENERGY Multiple Choice: Biodiesel contains less sulfur than petroleum-based diesel. When compared '
+                  'to petroleum- based diesel, which of the following is true about biodiesel due to the lower amount '
+                  'of sulfur?\n'
+                  'W) It produces more pollutants\n'
+                  'X) It is a better lubricant\n'
+                  'Y) It is a worse lubricant\n'
+                  'Z) It has a lower flashpoint',
+             'a': 'X'},
+            {'q': 'ENERGY Short Answer: Researchers at Lawrence Berkeley National Lab are currently using statistical '
+                  'methods to determine the destiny of every cell in the Drosophila [droh-SAWF-il-ah] zygote '
+                  '[ZYE-goat] as it becomes an adult, as has been previously done for C. elegans. What is the term for '
+                  'this methodology?',
+             'a': 'FATE MAPPING'},
+            {'q': 'ENERGY Short Answer: While most US bioethanol is produced from corn, most US biodiesel is produced '
+                  'from what crop?',
+             'a': 'SOY'},
+            {'q': 'ENERGY Multiple Choice: Which of the following does not perform a chemical reaction during '
+                  'operation?\n'
+                  'W) Combustion engine\n'
+                  'X) Rocket engine\n'
+                  'Y) Batteries\n'
+                  'Z) Wind turbine',
+             'a': 'Z'},
+            {'q': 'ENERGY Multiple Choice: Which of the following best explains why propane is stored in liquid form '
+                  'rather than as a gas?\n'
+                  'W) It is less flammable as a liquid\n'
+                  'X) It takes up much less space as a liquid\n'
+                  'Y) It is easier to burn as a liquid\n'
+                  'Z) It is a liquid at room temperature',
+             'a': 'X'},
+            {'q': 'ENERGY Multiple Choice: What nonrenewable energy source represents the greatest percentage of US '
+                  'energy consumption?\n'
+                  'W) Coal\n'
+                  'X) Natural gas\n'
+                  'Y) Propane\n'
+                  'Z) Petroleum',
+             'a': 'Z'},
+            {'q': 'ENERGY Multiple Choice: According to the U.S. Energy Information Administration, which of the '
+                  'following sectors consumed the most energy in the United States in 2014?\n'
+                  'W) Commercial\n'
+                  'X) Residential\n'
+                  'Y) Transportation\n'
+                  'Z) Industrial',
+             'a': 'Z'},
+            {'q': 'ENERGY Multiple Choice: DOE researchers are studying unique chemical bonds formed by interactions '
+                  'between lithium cations [CAT-eye-onz] and organo-aluminum compounds. Which of the following bonds '
+                  'are formed by these interactions?\n'
+                  'W) Two-center one-electron bonds\n'
+                  'X) Two-center two-electron bonds\n'
+                  'Y) Three-center two-electron bonds\n'
+                  'Z) Four-center one-electron bonds',
+             'a': 'Y'},
+            {'q': 'ENERGY Short Answer: Identify all of the following three statements that are true regarding ethanol '
+                  'fuel: 1) E15 is a renewable fuel; 2) Ethanol blender pumps are most commonly found in the Midwest; '
+                  '3) E15 produces less carbon monoxide emissions than pure gasoline.',
+             'a': '2 AND 3'},
+            {'q': 'ENERGY Multiple Choice: Which of the following energy sources produces the least carbon dioxide per '
+                  'unit of energy?\n'
+                  'W) Oil\n'
+                  'X) Coal\n'
+                  'Y) Natural gas\n'
+                  'Z) Nuclear',
+             'a': 'Z'},
+            {'q': 'ENERGY Multiple Choice: Fuel cell vehicles are commercially available in the U.S. How is the '
+                  'hydrogen fuel stored on these vehicles?\n'
+                  'W) As a gas at 8000 psi\n'
+                  'X) As a liquid under cryogenic conditions\n'
+                  'Y) Absorbed in metal hydrides\n'
+                  'Z) Adsorbed in ceramic zeolites',
+             'a': 'W'},
+            {'q': 'ENERGY Multiple Choice: DOE scientists have recently been studying the material properties of '
+                  'graphene. Which of the following pairs of characteristics did they discover regarding graphene?\n'
+                  'W) High strength, high toughness\n'
+                  'X) High strength, low toughness\n'
+                  'Y) Low strength, high toughness\n'
+                  'Z) Low strength, low toughness',
+             'a': 'X'},
+            {'q': 'ENERGY Multiple Choice: Which of the following is derived from kerosene?\n'
+                  'W) Gasoline\n'
+                  'X) Paraffin wax\n'
+                  'Y) Jet fuel\n'
+                  'Z) Propane',
+             'a': 'Y'},
+            {'q': 'ENERGY Short Answer: Muliple Choice 97% of US gasoline sold today contains what percentage of '
+                  'ethanol?\n'
+                  'W) 0\n'
+                  'X) 10\n'
+                  'Y) 15\n'
+                  'Z) 85',
+             'a': 'X) 10'},
+            {'q': 'ENERGY Short Answer: In the United States, what is the maximum percentage of ethanol upon which a '
+                  '"flex-fuel" vehicle is designed to run?',
+             'a': '85'},
+            {'q': 'ENERGY Multiple Choice: Wind, moving water, sunlight, and heat from Earth’s interior are sources of '
+                  'what type of energy?\n'
+                  'W) Renewable\n'
+                  'X) Fossil\n'
+                  'Y) Alternative\n'
+                  'Z) Reusable',
+             'a': 'W'},
+            {'q': 'ENERGY Multiple Choice: Which of the following was not one of the top three carbon-dioxide-emitting '
+                  'countries in\n'
+                  '2014?\n'
+                  'W) India\n'
+                  'X) China\n'
+                  'Y) United States\n'
+                  'Z) Russia',
+             'a': 'Z'},
+            {'q': "ENERGY Multiple Choice: At the DOE's Advanced Photon Source, researchers are studying industrial "
+                  'catalysts used in petrochemical processing. Which of the following correctly describes most of '
+                  'these catalysts?\n'
+                  'W) Organic molecules\n'
+                  'X) Enzymes\n'
+                  'Y) Homogeneous inorganic\n'
+                  'Z) Heterogeneous inorganic',
+             'a': 'Z'},
+            {'q': 'ENERGY Multiple Choice: Lawrence Berkeley National Lab scientists have been studying XPG, a protein '
+                  'found to play a role in protecting the body from cancer. Which of the following proteins likely '
+                  'plays a similar role to XPG?\n'
+                  'W) Phosphofructokinase [faws-fo-frook-toh-KYE-nase]\n'
+                  'X) p53\n'
+                  'Y) Aldolase\n'
+                  'Z) Carbonic anhydrase',
+             'a': 'X'},
+            {'q': 'ENERGY Short Answer: While fluorescent lamps have a much higher efficiency than incandescent bulbs, '
+                  'they require special disposal concerns due to their construction involving what heavy metal vapor?',
+             'a': 'MERCURY'},
+            {'q': 'ENERGY Short Answer: What are the coolant and the moderator, respectively, in pressurized heavy '
+                  'water reactors?',
+             'a': 'HEAVY WATER AND HEAVY WATER'},
+            {'q': 'ENERGY Multiple Choice: Which of the following forms of energy has the lowest average cost of '
+                  'operation and maintenance?\n'
+                  'W) Solar\n'
+                  'X) Wind\n'
+                  'Y) Geothermal\n'
+                  'Z) Hydro',
+             'a': 'W'},
+            {'q': 'ENERGY Multiple Choice: One of the largest solar power plants in the U.S. is at Ivanpah '
+                  '[EYE-van-pah] in southern\n'
+                  'California. It converts solar energy into electricity via what mechanism?\n'
+                  'W) Molten salt contacting thermoelectrics\n'
+                  'X) Direct photovoltaic [photo-vawl-TAY-ik] panels\n'
+                  'Y) Photoelectrolysis to produce hydrogen gas\n'
+                  'Z) Superheated steam through a turbine',
+             'a': 'Z'},
+            {'q': 'ENERGY Multiple Choice: Immediately after being removed from a fission reactor, spent fuel rods '
+                  'will be placed where?\n'
+                  'W) Underground\n'
+                  'X) Underwater\n'
+                  'Y) Reprocessing plants\n'
+                  'Z) MOX factories',
+             'a': 'X'},
+            {'q': 'ENERGY Multiple Choice: What are the primary mobile charge carriers in the sulfonated fluoropolymer '
+                  '[floor-oh-PAWL-ih-mur] ion-exchange membranes used in commercial fuel cells?\n'
+                  'W) Hydroxide ions\n'
+                  'X) Sodium cations [CAT-eye-onz]\n'
+                  'Y) Water\n'
+                  'Z) Protons',
+             'a': 'Z'},
+            {'q': 'ENERGY Short Answer: Moderators in nuclear reactors are used because of their ability to absorb '
+                  'energy from what particles?',
+             'a': 'NEUTRONS'},
+            {'q': 'ENERGY Short Answer: DOE researchers recently published about the development of a complex oxide '
+                  'alloy that, rather than being primarily stabilized by chemical bonding, is stabilized by what state '
+                  'function?',
+             'a': 'ENTROPY'},
+            {'q': 'ENERGY Short Answer: Methyl-tertiary-butyl-ether [methil-ter-shee-air-ee- byu-til-eethur], '
+                  'abbreviated MTBE, replaced lead in gasoline due to several environmental benefits. In order to '
+                  'raise octane rating in current gasoline, what has subsequently replaced MTBE?',
+             'a': 'ETHANOL'},
+            {'q': 'ENERGY Multiple Choice: Which of the following is the best estimate of the electricity consumption '
+                  'of a petascale\n'
+                  '[PEH-tah-scale] supercomputer today?\n'
+                  'W) 8 kilowatts\n'
+                  'X) 80 kilowatts\n'
+                  'Y) 8 megawatts\n'
+                  'Z) 80 megawatts',
+             'a': 'Y'},
+            {'q': 'ENERGY Multiple Choice: Which of the following weather conditions and times of year is best for '
+                  'achieving efficient energy conversion in a solar thermal plant?\n'
+                  'W) Partly cloudy day in fall\n'
+                  'X) Rainy day in spring\n'
+                  'Y) Partly sunny day in winter\n'
+                  'Z) Overcast day in summer',
+             'a': 'W'},
+            {'q': 'ENERGY Multiple Choice: Which of the following accounts for the largest proportion of total US '
+                  'domestic energy production?\n'
+                  'W) Natural gas\n'
+                  'X) Petroleum\n'
+                  'Y) Coal\n'
+                  'Z) Nuclear',
+             'a': 'W'},
+            {'q': 'ENERGY Short Answer: DOE scientists recently published a paper in which nanoscale circuitry '
+                  '[sur-cah-tree] was developed by printing a carbon-based semiconductor on a germanium '
+                  '[jer-MAYN-ee-um] surface. What allotrope of carbon are the semiconductors based on?',
+             'a': 'GRAPHENE'},
+            {'q': 'ENERGY Short Answer: What is the only baseload electrical power source in the US that is virtually '
+                  'carbon neutral, and supplies 20% of baseload electrical power?',
+             'a': 'NUCLEAR POWER'},
+            {'q': 'ENERGY Short Answer: Biogas is a renewable energy source that is typically produced as landfill '
+                  'gas, caused by the breakdown of biodegradable waste via anaerobic microbes. What two gases are the '
+                  'primary constituents of biogas?',
+             'a': 'METHANE AND CARBON DIOXIDE'},
+            {'q': 'ENERGY Short Answer: Based on average operating conditions, rank the following household appliances '
+                  'in order of increasing electricity usage per unit time: 1) LCD TV; 2) Toaster oven; 3) Hair dryer; '
+                  '4) Curling iron.',
+             'a': '1, 4, 2, 3'},
+            {'q': 'ENERGY Short Answer: The National Renewable Energy Laboratory has recently demonstrated that wind '
+                  'turbines can now increase the stability of a power system by employing what modulating technology?',
+             'a': 'ACTIVE POWER CONTROLS'},
+            {'q': 'ENERGY Short Answer: A major component of gasification-based syngas is carbon monoxide. What is the '
+                  'other major fuel component?',
+             'a': 'HYDROGEN'},
+            {'q': 'ENERGY Short Answer: What treaty, signed by the United States, banned the usage of CFCs?',
+             'a': 'MONTREAL TREATY'},
+            {'q': 'ENERGY Short Answer: Until the 1900s, what fossil fuel was the number one energy source in the '
+                  'United States?',
+             'a': 'COAL'},
+            {'q': 'ENERGY Short Answer: What US state is responsible for generating the most total net electricity?',
+             'a': 'TEXAS'},
+            {'q': 'ENERGY Short Answer: Vapor extraction, steam-assisted gravity drainage, and cold heavy oil '
+                  'production with sand are all methods of extracting what type of petroleum deposit, found primarily '
+                  'in Alberta, Canada?',
+             'a': 'OIL SANDS'},
+            {'q': 'ENERGY Short Answer: What is the name of the process by which biomass is thermally decomposed in '
+                  'the absence of oxygen?',
+             'a': 'PYROLYSIS'},
+            {'q': 'ENERGY Short Answer: What name is used for the semiconductor nanoparticles that are being studied '
+                  'and incorporated into solar cells, LEDs, and color displays?',
+             'a': 'QUANTUM DOTS'},
+            {'q': 'ENERGY Short Answer: DOE scientists at SLAC have previously shown that electrons can be accelerated '
+                  'by riding a wave of plasma. Recently, they showed that what similar particles, products of beta '
+                  '[BAY-tah] plus decay, can also be accelerated in the same manner?',
+             'a': 'POSITRONS'},
+            {'q': 'ENERGY Short Answer: Identify all of the following three emissions that are reduced in biodiesel as '
+                  'compared to petroleum diesel: 1) Sulfur; 2) Particulates; 3) Carbon monoxide.',
+             'a': 'ALL OF THEM'},
+            {'q': 'ENERGY Short Answer: E10 fuel can produce what low atmosphere pollutant that serves as a UV '
+                  'protectant in the upper atmosphere?',
+             'a': 'OZONE'},
+            {'q': 'ENERGY Short Answer: The Daya [DIE-ah] Bay Collaboration is currently on the hunt for a '
+                  'hypothetical type of neutrino [new-TREE-no] that does not interact with other particles except '
+                  'through gravity. What is the term for this neutrino?',
+             'a': 'STERILE NEUTRINO'},
+            {'q': 'ENERGY Short Answer: Renewable diesel is produced via multiple methods. Biodiesel, however, is only '
+                  'produced via what chemical process?',
+             'a': 'TRANSESTERIFICATION'},
+            {'q': 'ENERGY Short Answer: Scientists at Argonne National Lab recently published a paper regarding the '
+                  'potential use of certain microbes as a method for recovering natural gas from depleted oil and coal '
+                  'mines. What specific fuel molecule do these microbes produce?',
+             'a': 'METHANE'},
+            {'q': 'ENERGY Short Answer: DOE scientists at Brookhaven National Lab are using the Relativistic Heavy Ion '
+                  'Collider to study color confinement within protons. What group of elementary particles are they '
+                  'studying?',
+             'a': 'QUARKS'},
+            {'q': 'ENERGY Short Answer: Many redox [REE-dox] flow batteries use acidic electrolytes. Electrodes in '
+                  'these devices must necessarily be immune to acid attack as well as electronically conductive. What '
+                  'element is used for almost all flow battery electrodes?',
+             'a': 'CARBON'},
+            {'q': 'ENERGY Short Answer: What U.S. university was the site of the first ever sustained nuclear '
+                  'reaction?',
+             'a': 'UNIVERSITY OF CHICAGO'},
+            {'q': 'ENERGY Short Answer: Recent experiments regarding antimatter at the Relativistic Heavy Ion Collider '
+                  'determined that what fundamental force demonstrates no asymmetry within nuclei [NEW-klee-eye]?',
+             'a': 'STRONG NUCLEAR FORCE'},
+            {'q': 'ENERGY Short Answer: Identify all of the following three options that would increase the resistance '
+                  'of a wire:\n'
+                  '1) Increasing the temperature; 2) Increasing the radius; 3) Increasing the length.',
+             'a': '1 AND 3'},
+            {'q': 'ENERGY Short Answer: Hydrogen fuel cells use a membrane to separate the electrodes and allow what '
+                  'particles to pass from the anode [ANN-ode] to the cathode [CATH-ode]?',
+             'a': 'PROTONS'},
+            {'q': 'ENERGY Multiple Choice: What is the typical co-electrolyte in Vanadium [vah-NAY-dee-um] redox '
+                  '[REE-dox] flow batteries?\n'
+                  'W) Zinc nitrate\n'
+                  'X) Sulfuric acid\n'
+                  'Y) Sodium hydroxide\n'
+                  'Z) Copper chloride',
+             'a': 'X'},
+            {'q': 'ENERGY Short Answer: Biodiesel produces less particulates, carbon oxides, sulfur dioxide, and '
+                  'unburnt carbons than fossil-based diesel. However, biodiesel does result in greater emissions of '
+                  'what ozone-generating pollutant?',
+             'a': 'NITROUS OXIDES'},
+            {'q': 'ENERGY Multiple Choice: Which of the following solar cell systems has the highest efficiency?\n'
+                  'W) Silicon\n'
+                  'X) Gallium [GAL-ee-um] Arsenide [AHR-sin-ide]\n'
+                  'Y) Thin Film Photovoltaic [photo-vawl-TAY-ik]\n'
+                  'Z) Polymeric [paw-lih-MARE-ik] Photovoltaic',
+             'a': 'X'},
+            {'q': 'ENERGY Multiple Choice: Which of the following materials would most likely be used as a catalyst '
+                  'for fuel cells?\n'
+                  'W) Titanium\n'
+                  'X) Silver\n'
+                  'Y) Carbon\n'
+                  'Z) Palladium [puh-LAID-ee-um]',
+             'a': 'Z'},
+            {'q': 'ENERGY Short Answer: Rank the following three substances in order of increasing energy density: 1) '
+                  'Bituminous coal; 2) Gasoline; 3) TNT.',
+             'a': '3, 1, 2'},
+            {'q': 'ENERGY Multiple Choice: Metal-organic frameworks, or MOFs, are a subject of research at Lawrence '
+                  'Berkeley\n'
+                  'National Lab. Which of the following is a potential use of MOFs?\n'
+                  'W) Tools for quantum computing\n'
+                  'X) Developing more accurate predictions via density functional theory\n'
+                  'Y) Efficient storage of gases\n'
+                  'Z) Homogeneous catalysts',
+             'a': 'Y'},
+            {'q': 'ENERGY Multiple Choice: DOE scientists at SLAC [slack] have been using the Linac Coherent Light '
+                  'Source to study SNARE proteins in the brain. Which of the following processes are SNARE proteins '
+                  'involved with?\n'
+                  'W) Vesicle docking\n'
+                  'X) Actin polymerization [pawl-ih-mer-eh-ZAY-shun]\n'
+                  'Y) Intracellular trafficking\n'
+                  'Z) Hormonal signalling',
+             'a': 'W'},
+            {'q': 'ENERGY Multiple Choice: Researchers at Lawrence Berkeley National Lab are currently working on '
+                  'optimizing plants to produce less lignin. For which of the following are these genetically modified '
+                  'plants likely to be used?\n'
+                  'W) Construction materials\n'
+                  'X) Ethanol production\n'
+                  'Y) Insulation\n'
+                  'Z) Food',
+             'a': 'X'},
+            {'q': 'ENERGY Multiple Choice: Which of the following percentages is closest to the level of engine '
+                  'efficiency in a modern gasoline-burning automobile?\n'
+                  'W) 10%\n'
+                  'X) 25%\n'
+                  'Y) 50%\n'
+                  'Z) 90%',
+             'a': 'X'},
+            {'q': 'ENERGY Multiple Choice: A family in Phoenix is considering installing a photovoltaic '
+                  '[photo-vawl-TAY-ik] system on their house. Which of the following roof orientations and inclined '
+                  'angles relative to horizontal is best to install the panels?\n'
+                  'W) West-facing at 30 degrees\n'
+                  'X) South-facing at 30 degrees\n'
+                  'Y) South-facing at zero degrees\n'
+                  'Z) East-facing at zero degrees',
+             'a': 'X'},
+            {'q': 'ENERGY Multiple Choice: Why is solar power underutilized in American households?\n'
+                  'W) It increases the price of a home by about 5-10%\n'
+                  'X) North America is mostly cloudy\n'
+                  'Y) Solar technology is currently not very effective\n'
+                  'Z) Solar cells are not effective in cold climates',
+             'a': 'W'},
+            {'q': 'ENERGY Multiple Choice: Nanolithography is a current research interest at Lawrence Livermore '
+                  'National Lab.\n'
+                  'Which of the following correctly describes nanolithography?\n'
+                  'W) The study of fluids confined to nanoscale structures\n'
+                  'X) Usage of nanoparticles as medical technology\n'
+                  'Y) Depositing residues thinner than 100 nanometers onto surfaces\n'
+                  'Z) Fabricating structures smaller than 100 nanometers',
+             'a': 'Z'},
+            {'q': 'ENERGY Multiple Choice: Researchers are using the Argonne Leadership Computing Facility to design '
+                  'and model peptide therapeutics. Which of the following is NOT a challenge associated with peptide '
+                  'therapeutics?\n'
+                  'W) They are difficult to deliver\n'
+                  'X) They have poor specificity\n'
+                  'Y) They have poor cell penetration\n'
+                  'Z) They are degraded in the circulatory system',
+             'a': 'X'},
+            {'q': 'ENERGY Multiple Choice: Researchers at Lawrence Livermore National Lab are studying the conditions '
+                  'under which planet formation occurs by doing which of the following?\n'
+                  'W) Determining the melting point of silica at gigapascal [gih-gah-pass-KAL] pressures\n'
+                  'X) Determining the melting point of silica in ultra high vacuum\n'
+                  'Y) Determining the boiling point of silica at gigapascal pressures\n'
+                  'Z) Determining the boiling point of alumina at gigapascal pressures',
+             'a': 'W'},
+            {'q': 'ENERGY Multiple Choice: The Advanced Light Source can be used to identify elements in batteries and '
+                  'fuel cells.\n'
+                  'Which of the following tools is most likely used for these purposes at the ALS?\n'
+                  'W) Fluorescence microscopy\n'
+                  'X) X-ray absorption spectroscopy [spek-TRAW-scuh-pee]\n'
+                  'Y) NMR spectroscopy [spek-TRAW-scuh-pee]\n'
+                  'Z) Confocal microscopy',
+             'a': 'X'},
+            {'q': 'ENERGY Multiple Choice: Researchers at the Joint Genome [JEE-nome] Institute have been using new '
+                  'types of fungi [fun-ji] to produce biofuels from plant material. Where are these fungi naturally '
+                  'found?\n'
+                  'W) Forest soils\n'
+                  'X) Coral reefs\n'
+                  'Y) Animal guts\n'
+                  'Z) Swamps',
+             'a': 'Y'},
+            {'q': 'ENERGY Short Answer: In fluidized bed combustors used for clean coal, what is added to the coal to '
+                  'keep pollutants in check?',
+             'a': 'LIMESTONE'},
+            {'q': 'ENERGY Short Answer: The great majority of the transistors in integrated circuits are of the CMOS '
+                  'type. What do the letters of the acronym represent?',
+             'a': 'COMPLEMENTARY METAL OXIDE SEMICONDUCTOR'},
+            {'q': 'ENERGY Multiple Choice: Brookhaven National Lab scientists recently made strides on understanding '
+                  'the nature of\n'
+                  'Cooper pairs. To which of the following disciplines is this discovery most relevant?\n'
+                  'W) Particle physics\n'
+                  'X) Superconductor physics\n'
+                  'Y) Nuclear physics\n'
+                  'Z) Computational chemistry',
+             'a': 'X'},
+            {'q': 'ENERGY Multiple Choice: Scientists at Argonne National Lab are using x-rays to probe porosity in '
+                  '3D-printed titanium alloys. Which of the following best explains why porosity is undesirable?\n'
+                  'W) Porosity decreases resistance to fatigue\n'
+                  'X) Porosity decreases flexibility\n'
+                  'Y) A large range of pore sizes reduces printing resolution\n'
+                  'Z) Porosity limits the size of the structures that can be printed',
+             'a': 'W'},
+            {'q': 'ENERGY Multiple Choice: Which of the following sources of electricity had the largest increase in '
+                  'capacity in the US between 1990 and 2013?\n'
+                  'W) Nuclear\n'
+                  'X) Coal\n'
+                  'Y) Natural gas\n'
+                  'Z) Petroleum',
+             'a': 'Y'},
+            {'q': 'ENERGY Multiple Choice: Most lignite is used for what purpose in the US?\n'
+                  'W) Municipal heating\n'
+                  'X) Electricity\n'
+                  'Y) Automobile fuel\n'
+                  'Z) Liquefaction',
+             'a': 'X'},
+            {'q': 'ENERGY Short Answer: In 1918, the German mathematician Emmy Noether [Noh-tur] published a theorem '
+                  'that shows that every conservation law has a corresponding symmetry of the system. What dynamical '
+                  'quantity is conserved in a system with rotational symmetry?',
+             'a': 'ANGULAR MOMENTUM'},
+            {'q': 'ENERGY Short Answer: Solid oxide fuel cells can operate at temperatures as high as 1000 degrees '
+                  'Celsius. This high temperature enables these fuel cells to forgo what costly component of '
+                  'low-temperature fuel cells?',
+             'a': 'CATALYST'},
+            {'q': 'ENERGY Short Answer: Scientists at Argonne National Lab are using computational chemistry to probe '
+                  'the catalytic properties of iridium [ih-RID-ee-um] oxide nanoparticles. What computational method, '
+                  'descended from Hartree-Fock theory, is most commonly used for quantum mechanical modeling?',
+             'a': 'DENSITY FUNCTIONAL THEORY'},
+            {'q': 'ENERGY Short Answer: Scientists at Brookhaven National Lab discovered that layering graphene on top '
+                  "of soda- lime glass resulted in a large change in the graphene's electronic properties. What "
+                  'specific element in the glass was found to be responsible for these changes?',
+             'a': 'SODIUM'},
+            {'q': 'ENERGY Multiple Choice: The energy price spikes in the 1970s and in 2008 suggested which of the '
+                  'following about\n'
+                  'U.S. energy usage?\n'
+                  'W) Usage rises in response to rising prices\n'
+                  'X) Usage stays the same when prices rise\n'
+                  'Y) Usage drops in response to rising prices\n'
+                  'Z) There was no consistent trend about U.S. energy usage',
+             'a': 'Y'},
+            {'q': 'ENERGY Short Answer: What country is the source of the largest percentage of petroleum imported to '
+                  'the US?',
+             'a': 'CANADA'},
+            {'q': 'ENERGY Short Answer: In a junction transistor used as a switch, which terminal controls the current '
+                  'through the other two terminals?',
+             'a': 'BASE'},
+            {'q': 'ENERGY Multiple Choice: Oil shale is a type of organic-rich sedimentary rock that can be used to '
+                  'produce shale oil, also known as tight oil, which is a substitute for conventional crude oil. Which '
+                  'of the following varieties of oil shale is\n'
+                  'NOT classified as a marine shale?\n'
+                  'W) Kukersite\n'
+                  'X) Torbanite\n'
+                  'Y) Tasminite\n'
+                  'Z) Marinite',
+             'a': 'X'},
+            {'q': 'ENERGY Multiple Choice: The further advancement of rechargeable batteries is currently hindered by '
+                  'unavoidable growth of what during battery cell recharge?\n'
+                  'W) Lithium dendrites\n'
+                  'X) Potassium salts\n'
+                  'Y) Nickel deposits\n'
+                  'Z) Lead precipitates',
+             'a': 'W'},
+            {'q': "ENERGY Multiple Choice: Lawrence Livermore National Laboratory's National Ignition Facility is "
+                  'using what technology to further nuclear fusion energy research?\n'
+                  'W) Magnetic plasma confinement\n'
+                  'X) Toroidal plasma confinement\n'
+                  'Y) Laser inertial confinement\n'
+                  'Z) Electromagnetic implosion',
+             'a': 'Y'}],
+ 'chem': [{'q': 'CHEMISTRY Multiple Choice: Which of the following molecules is nonpolar?\n'
+                'W) Acetone\n'
+                'X) Carbon tetrachloride\n'
+                'Y) Sulfur dioxide\n'
+                'Z) Iodine chloride',
+           'a': 'X'},
+          {'q': 'CHEMISTRY Multiple Choice: Which of the following describes the phenomenon of light emission by '
+                'fireflies?\n'
+                'W) Absorption\n'
+                'X) Chemiluminescence [kem-ee-loo-min-ESS-ense]\n'
+                'Y) Fluorescence\n'
+                'Z) Incandescence',
+           'a': 'X'},
+          {'q': 'CHEMISTRY Short Answer: Identify all of the following three types of chemical bonds that can be '
+                'formed by two atomic p-orbitals: 1) Sigma bond; 2) Pi [pie] bond; 3) Delta bond.',
+           'a': '1 AND 2'},
+          {'q': 'CHEMISTRY Short Answer: Identify the central atom hybridization states of the following three '
+                'molecules:\n'
+                '1) Phosphorous trichloride; 2) Iodine pentafluoride; 3) Formaldehyde.',
+           'a': '1) sp3; 2) d2sp3'},
+          {'q': 'CHEMISTRY Multiple Choice: According to Lewis theory, which of the following conditions would most '
+                'accelerate an acid-base reaction?\n'
+                'W) An elevated HOMO [HO-mo] and a depressed LUMO [LOO-mo]\n'
+                'X) An elevated HOMO and an elevated LUMO\n'
+                'Y) A depressed HOMO and an elevated LUMO\n'
+                'Z) A depressed HOMO and a depressed LUMO',
+           'a': 'W'},
+          {'q': 'CHEMISTRY Short Answer: Consider the reaction of 1 mole of nitrogen gas and 1 mole of oxygen gas to '
+                'generate 2 moles of NO gas. In air at 20 degrees Celsius, the equilibrium abundance of NO is about '
+                'one part in 1016. To one significant figure and in scientific notation, what is the equilibrium '
+                'constant of this reaction?',
+           'a': '6 TIMES 10-32'},
+          {'q': 'CHEMISTRY Multiple Choice: Which of the following graphs would produce a straight line if plotted for '
+                'a zero- order irreversible reaction?\n'
+                'W) Concentration versus time\n'
+                'X) Inverse concentration versus time\n'
+                'Y) Log of concentration versus time\n'
+                'Z) Inverse concentration squared versus time',
+           'a': 'W'},
+          {'q': 'CHEMISTRY Short Answer: Rank the following three acids from least to greatest in terms of acidity:\n'
+                '1) 2-chlorobutanoic [two kloro-byu-tan-OH-ik] acid; 2) 3-chlorobutanoic acid; 3) 4-chlorobutanoic '
+                'acid.',
+           'a': '3, 2, 1'},
+          {'q': 'CHEMISTRY Multiple Choice: Which of the following elements is the most electronegative?\n'
+                'W) Beryllium\n'
+                'X) Sodium\n'
+                'Y) Calcium\n'
+                'Z) Cesium',
+           'a': 'W'},
+          {'q': 'CHEMISTRY Multiple Choice: Which of the following is an assumption of the ideal gas law?\n'
+                'W) The volume of individual molecules is negligible compared to the volume of the container\n'
+                'X) All molecules travel at the same velocity\n'
+                'Y) Molecules only interact through dipole [DYE-pole]-dipole forces\n'
+                'Z) Molecules do not collide with each other',
+           'a': 'W'},
+          {'q': 'CHEMISTRY Short Answer: How many d electrons are present in a cobalt ion in the +2 state?', 'a': '7'},
+          {'q': 'CHEMISTRY Short Answer: Rank the following four elements in terms of increasing melting point:\n'
+                '1) Boron; 2) Sodium; 3) Lithium; 4) Tungsten.',
+           'a': '2, 3, 1, 4'},
+          {'q': 'CHEMISTRY Multiple Choice: What is the most likely type of interaction between the side chains of the '
+                'amino acids leucine [LOO-seen] and phenylalanine [Fennel-AL-ah-neen]?\n'
+                'W) Ionic\n'
+                'X) Hydrophobic\n'
+                'Y) Hydrogen bonding\n'
+                'Z) Dipole [DYE-pole]-dipole',
+           'a': 'X'},
+          {'q': 'CHEMISTRY Short Answer: Consider the SN2 reaction of 1-chloropentane with the azide [AY-zide] ion. '
+                'What is the\n'
+                'LUMO [LOO-mo] of the electrophile in this reaction?',
+           'a': 'SIGMA-STAR ORBITAL'},
+          {'q': 'CHEMISTRY Short Answer: Identify all of the following three statements concerning enthalpy '
+                '[EN-thul-pee] that are TRUE: 1) The enthalpy [EN-thul-pee] of formation of diamond is equal to zero; '
+                '2) The enthalpy change of an isothermal contraction is less than zero; 3) The enthalpy of solution of '
+                'ammonium nitrate is greater than zero.',
+           'a': '3'},
+          {'q': 'CHEMISTRY Short Answer: Identify all of the following three compounds that have a standard enthalpy '
+                'of formation of zero: 1) Ozone; 2) Diamond; 3) Rhombic sulfur.',
+           'a': '3'},
+          {'q': 'CHEMISTRY Multiple Choice: Which of the following atoms is commonly found in a +3 oxidation state?\n'
+                'W) Calcium\n'
+                'X) Nickel\n'
+                'Y) Iron\n'
+                'Z) Zirconium',
+           'a': 'Y'},
+          {'q': 'CHEMISTRY Short Answer: Identify all of the following properties that are examples of state '
+                'functions:\n'
+                '1) Volume; 2) Temperature; 3) Entropy [EN-troh-pee].',
+           'a': '1, 2, 3'},
+          {'q': 'CHEMISTRY Short Answer: What is the shape of an isolated complex in which a metal ion is bonded to '
+                'six ligands\n'
+                '[LIH-gunz]?',
+           'a': 'OCTAHEDRAL'},
+          {'q': 'CHEMISTRY Short Answer: Rank the boiling points of the following three hydrocarbons, from lowest to '
+                'highest:\n'
+                '1) Isobutane; 2) Butane; 3) Pentane.',
+           'a': '1, 2, 3'},
+          {'q': 'CHEMISTRY Multiple Choice: Consider an ideal gas initially occupying a volume of 5 liters and at a '
+                'pressure of 5 atmospheres, that undergoes an adiabatic [ad-ee-ah-BAT-ik] expansion to a final '
+                'pressure of 1 atmosphere. Which of the following is TRUE concerning the final volume of the gas?\n'
+                'W) It is greater than 25 liters\n'
+                'X) It is equal to 25 liters\n'
+                'Y) It is between 5 liters and 25 liters\n'
+                'Z) It is equal to 5 liters',
+           'a': 'Y'},
+          {'q': 'CHEMISTRY Short Answer: What class of microporous aluminosilicates [ah-lumin-oh-SILL-ih-kets] is used '
+                'to soften hard water by removing metal ions such as iron and replacing them with sodium?',
+           'a': 'ZEOLITES'},
+          {'q': 'CHEMISTRY Short Answer: Identify all of the following three solutions that would be acidic: 1) A '
+                'solution of iron(III) atoms hexacoordinated by water molecules; 2) A solution of ammonium sulfate; 3) '
+                'A solution of sodium cyanide.',
+           'a': '1 AND 2'},
+          {'q': 'CHEMISTRY Short Answer: The compound sulfurous [sul-FYUR-us] acid has a first pKa of approximately '
+                '1.8 and a second pKa of approximately 7.2. To one decimal place, what is the pH of a solution of 0.1 '
+                'molar sodium bisulfite?',
+           'a': '4.5'},
+          {'q': 'CHEMISTRY Multiple Choice: Which of the following is considered a strong acid?\n'
+                'W) Hydrofluoric acid\n'
+                'X) Nitric acid\n'
+                'Y) Formic acid\n'
+                'Z) Nitrous acid',
+           'a': 'X'},
+          {'q': 'CHEMISTRY Multiple Choice: Which of the following polyprotic [polly-PRO-tic] acids has only two pKa '
+                'values?\n'
+                'W) Ascorbic acid\n'
+                'X) Phosphoric [faws-FOR-ik] acid\n'
+                'Y) Arsenic acid\n'
+                'Z) Citric acid',
+           'a': 'W'},
+          {'q': 'CHEMISTRY Short Answer: What gas, whose methylated derivative is used in rocket fuels, is produced by '
+                'bubbling ammonia through a sodium hypochlorite solution?',
+           'a': 'HYDRAZINE'},
+          {'q': 'CHEMISTRY Short Answer: The isomerization reaction of a particular cis-alkene to its trans-isomer is '
+                'first order. In terms of liters, moles, and seconds, what are the units for the rate constant of this '
+                'reaction?',
+           'a': 'INVERSE SECONDS'},
+          {'q': 'CHEMISTRY Multiple Choice: For a given redox [REE-dox] reaction, which of the following pairs of '
+                'thermodynamic statements is NOT possible?\n'
+                'W) K-equilibium greater than 1 and delta-H greater than zero\n'
+                'X) E-cell greater than zero and delta-G greater than zero\n'
+                'Y) delta-H greater than zero and delta-G greater than zero\n'
+                'Z) K-equilibium greater than 1 and E-cell greater than zero',
+           'a': 'X'},
+          {'q': 'CHEMISTRY Short Answer: How many total nodes exist within the highest energy pi molecular orbital for '
+                '1,3-butadiene [One three byoo-tah-DYE-een]?',
+           'a': '4'},
+          {'q': 'CHEMISTRY Short Answer: Identify all of the following three compounds that can crystallize as network '
+                'solids:\n'
+                '1) Carbon dioxide; 2) Silicon dioxide; 3) Silicon carbide.',
+           'a': '2 AND 3'},
+          {'q': 'CHEMISTRY Short Answer: Rank the following three reactions in terms of increasing delta H, from most '
+                'negative to most positive: 1) Combustion of one mole of formaldehyde; 2) Combustion of one mole of '
+                'methanol; 3) Combustion of one mole of methane.',
+           'a': '3, 2, 1'},
+          {'q': 'CHEMISTRY Multiple Choice: What element has the highest ionization energy?\n'
+                'W) Hydrogen\n'
+                'X) Helium\n'
+                'Y) Lithium\n'
+                'Z) Beryllium',
+           'a': 'X'},
+          {'q': 'CHEMISTRY Multiple Choice: Which of the following compounds has the highest polarity?\n'
+                'W) Carbon tetrachloride\n'
+                'X) Dimethyl [dye-meth-il] ether [EE-thur]\n'
+                'Y) Boron trifluoride [tri-FLOOR-ide]\n'
+                'Z) Trinitrotoluene [try-nitro-TAWL-yoo-een]',
+           'a': 'X'},
+          {'q': 'CHEMISTRY Short Answer: Rank the following three ions in terms of increasing radius:\n'
+                '1) Na+ [N A plus]; 2) Be2+ [B E plus two]; 3) Li+ [L I plus].',
+           'a': '2, 3, 1'},
+          {'q': 'CHEMISTRY Short Answer: What allotrope of phosphorus, which can be prepared by heating white '
+                'phosphorus to\n'
+                '300 degrees Celsius in the absence of air, is composed of amorphous interlocking P4 tetrahedra?',
+           'a': 'RED PHOSPHORUS'},
+          {'q': 'CHEMISTRY Multiple Choice: Which of the following statements best explains why chloroacetic '
+                '[kloro-ah-SEE-tik] acid is a stronger acid than acetic [ah-SEE-tik] acid?\n'
+                'W) Resonance delocalization of the conjugate base chloroacetate\n'
+                'X) Withdrawal of electron density by chlorine\n'
+                'Y) Donation of electron density by chlorine\n'
+                'Z) Greater electronegativity of chlorine than oxygen',
+           'a': 'X'},
+          {'q': "CHEMISTRY Short Answer: What is the name for the wavelength at which a sample's absorbance does not "
+                'change during a reaction?',
+           'a': 'ISOSBESTIC POINT'},
+          {'q': 'CHEMISTRY Short Answer: For the tri-iodide ion, what is the hybridization of the central iodine atom?',
+           'a': 'DSP3'},
+          {'q': 'CHEMISTRY Short Answer: Identify all of the following three compounds with dsp3 hybridized central '
+                'atoms:\n'
+                '1) Silicon tetrafluoride [tetrah-FLOOR-ide]; 2) Sulfur hexafluoride [hex-ah-FLOOR-ide]; 3) Sulfur '
+                'tetrafluoride.',
+           'a': '3'},
+          {'q': 'CHEMISTRY Multiple Choice: Which of the following is an example of an ionic compound?\n'
+                'W) Methane\n'
+                'X) Chlorine dioxide\n'
+                'Y) Dinitrogen trioxide\n'
+                'Z) Calcium sulfide',
+           'a': 'Z'},
+          {'q': 'CHEMISTRY Short Answer: What is the geometry of sulfur tetrafluoride [tetrah-FLOOR-ide]?',
+           'a': 'SEESAW'},
+          {'q': 'CHEMISTRY Short Answer: What quantity, in milliliters, of a 0.5 molar solution of sulfuric acid would '
+                'be required to neutralize 30 mL of a 0.1 molar solution of sodium hydroxide?',
+           'a': '3'},
+          {'q': 'CHEMISTRY Short Answer: Identify all of the following three statements that are TRUE of ideal '
+                'concentration cells:\n'
+                '1) They obey the Nernst equation; 2) At equilibrium, they have a positive redox [REE-dox] potential; '
+                '3) They have a positive standard redox potential.',
+           'a': '1'},
+          {'q': 'CHEMISTRY Multiple Choice: Consider the reaction of two moles of hydrogen gas and one mole of oxygen '
+                'gas to generate two moles of steam. Which of the following statements is TRUE?\n'
+                'W) Delta H is greater than delta U\n'
+                'X) Delta H is less than delta U\n'
+                'Y) Delta H is equal to delta U\n'
+                'Z) Delta H is greater than delta U at high temperatures, but less at low temperatures',
+           'a': 'X'},
+          {'q': 'CHEMISTRY Short Answer: Identify all of the following three diatomic [dye-ah-TOM-ik] molecules that '
+                'MO theory predicts to be stable: 1) Li ; 2) Be ; 3) B .\n'
+                '2 2 2',
+           'a': '1 AND 3'},
+          {'q': 'CHEMISTRY Short Answer: The hormone estrogen contains five stereocenters. How many stereoisomers of '
+                'estrogen are possible?',
+           'a': '32'},
+          {'q': 'CHEMISTRY Short Answer: Identify all of the following three techniques that could separate '
+                'enantiomers [en-AN- tee-oh-mirz] in a racemic [ray-SEEM-ik] mixture of a chiral amine [KYE-ruhl '
+                'ah-MEEN]: 1) Chiral chromatography\n'
+                '[crow-mah-TAW-grah-fee]; 2) Crystallization with acetic acid; 3) Crystallization with plus tartaric '
+                'acid.',
+           'a': '1 AND 3'},
+          {'q': 'CHEMISTRY Multiple Choice: Which of the following is the correct definition of molality?\n'
+                'W) Kilograms of solute per liter of solvent\n'
+                'X) Moles of solute per liter of solution\n'
+                'Y) Moles of solute per liter of solvent\n'
+                'Z) Moles of solute per kilogram of solvent',
+           'a': 'Z'},
+          {'q': 'CHEMISTRY Multiple Choice: Plants grown with deuterated [DOO-tur-ated] water grow more slowly than '
+                'those grown with non-deuterated water. This is thought to be an illustration of which of the '
+                'following effects?\n'
+                'W) Quantum Hall effect\n'
+                'X) Magnetic isotope effect\n'
+                'Y) Steric [steh-rik] isotope effect\n'
+                'Z) Kinetic isotope effect',
+           'a': 'Z'},
+          {'q': 'CHEMISTRY Multiple Choice: A student obtained a low value when he attempted to measure the number of '
+                'waters of hydration in a sample of calcium sulfate. Which of the following mistakes could lead to the '
+                'erroneous result?\n'
+                'W) The sample was not heated enough\n'
+                'X) The sample was heated too much\n'
+                'Y) A balance that gave uniformly high readings was used\n'
+                'Z) A balance that gave uniformly low readings was used',
+           'a': 'W'},
+          {'q': 'CHEMISTRY Multiple Choice: Which of the following elements possesses the largest first ionization '
+                'energy?\n'
+                'W) Fluorine [FLOOR-een]\n'
+                'X) Neon\n'
+                'Y) Calcium\n'
+                'Z) Argon',
+           'a': 'X'},
+          {'q': 'CHEMISTRY Multiple Choice: Which of the following electrons would be most effective at shielding the '
+                'nuclear charge seen by a 3s electron in an aluminum atom?\n'
+                'W) 1s\n'
+                'X) 2s\n'
+                'Y) 2p\n'
+                'Z) 3s',
+           'a': 'W'},
+          {'q': 'CHEMISTRY Multiple Choice: If an organo-magnesium compound is reacted with formaldehyde '
+                '[foor-MAL-dih-hide], which of the following will be formed?\n'
+                'W) Ketone [KEE-tone]\n'
+                'X) Imine [IH-meen]\n'
+                'Y) Secondary alcohol\n'
+                'Z) Primary alcohol',
+           'a': 'Z'},
+          {'q': 'CHEMISTRY Short Answer: What type of bond, which also exists in the transition states of carbocation '
+                'rearrangements, allows each boron atom to achieve an octet in the compound diborane?',
+           'a': 'THREE-CENTER TWO-ELECTRON BOND'},
+          {'q': 'CHEMISTRY Short Answer: Identify all of the following three analytical techniques that could be used '
+                'to detect the difference between two diastereomers [dye-ah-STARE-ee-oh-murz]: 1) X-ray '
+                'crystallography [crystal-AW-graphy];\n'
+                '2) NMR spectroscopy [spek-TRAW-scuh-pee]; 3) Mass spectrometry [spek-TRAW-metry].',
+           'a': '1 AND 2'},
+          {'q': 'CHEMISTRY Multiple Choice: Trans fats necessarily contain what functional group?\n'
+                'W) Ester\n'
+                'X) Alkene\n'
+                'Y) Alcohol\n'
+                'Z) Amine [ah-MEEN]',
+           'a': 'X'},
+          {'q': "CHEMISTRY Multiple Choice: Tollens' test can detect aldehyde [AL-deh-hide]-containing compounds. To "
+                'perform\n'
+                "Tollens' test, an organic compound is mixed with a solution of silver ions. Which of the following "
+                'indicates that the compound of interest contains an aldehyde?\n'
+                'W) A silver mirror is formed\n'
+                'X) Insoluble silver oxide precipitates from solution\n'
+                'Y) The reaction mixture turns yellow\n'
+                'Z) The aldehyde is reduced to an alcohol',
+           'a': 'W'},
+          {'q': 'CHEMISTRY Multiple Choice: Consider ice at 0 degrees Celsius that is heated until it becomes water at '
+                '80 degrees\n'
+                'Celsius. Which of the following statements is TRUE concerning its volume?\n'
+                'W) It monotonically [mono-TAWN-ik-lee] decreases\n'
+                'X) It decreases until 4 degrees Celsius, then increases\n'
+                'Y) It increases until 4 degrees Celsius, then remains constant\n'
+                'Z) It remains constant',
+           'a': 'X'},
+          {'q': 'CHEMISTRY Multiple Choice: Which of the following transition metal 2+ ions is most commonly found in '
+                'a square planar geometry?\n'
+                'W) Copper\n'
+                'X) Nickel\n'
+                'Y) Iron\n'
+                'Z) Cobalt',
+           'a': 'X'},
+          {'q': 'CHEMISTRY Multiple Choice: Which of the following statements is NOT true concerning the hydrogen '
+                'atom, if only gross structure contributions are accounted for?\n'
+                'W) 4s orbitals are at a higher energy than 3d orbitals\n'
+                'X) 4d orbitals are at a higher energy than 3d orbitals\n'
+                'Y) A 2p to 1s transition is more energetic than a 4p to 2s transition\n'
+                'Z) The Balmer series includes only transitions to n=2',
+           'a': 'W'},
+          {'q': 'CHEMISTRY Short Answer: Identify all of the following three diatomic [dye-ah-TOM-ik] compounds that '
+                'MO theory predicts to be paramagnetic: 1) B ; 2) C ; 3) N .\n'
+                '2 2 2',
+           'a': '1'},
+          {'q': 'CHEMISTRY Short Answer: Rank the pH of the following three solutions, from lowest to highest: 1) One '
+                'molar solution of hydrochloric acid; 2) One molar solution of acetic acid; 3) One molar solution of '
+                'ammonium perchlorate.',
+           'a': '1, 2, 3'},
+          {'q': 'CHEMISTRY Short Answer: Identfiy all of the following three molecules that are likely to act as '
+                'electrophiles in a substitution reaction: 1) Ammonia; 2) Bromide; 3) Methyl bromide.',
+           'a': '3'},
+          {'q': 'CHEMISTRY Multiple Choice: Which of the following is the most plausible first step in the solvolysis '
+                '[sawl-VAWL- eh-sis] of tert-butyl [turt-BYU-til] iodide in water?\n'
+                'W) Concerted substitution\n'
+                'X) Attack of water to form a pentavalent [penta-VAY-lent] intermediate\n'
+                'Y) Decomposition to form positively-charged intermediate\n'
+                'Z) Decomposition to form negatively-charged intermediate',
+           'a': 'Y'},
+          {'q': 'CHEMISTRY Short Answer: Rank the following three acids in terms of increasing pKa: 1) Chlorous '
+                '[KLOR-us] acid;\n'
+                '2) Hydroiodic [HIGH-droh-eye-AW-dik] acid; 3) Acetic [ah-SEE-tik] acid.',
+           'a': '2, 1, 3'},
+          {'q': 'CHEMISTRY Multiple Choice: Which of the following compounds has the lowest boiling point?\n'
+                'W) Water\n'
+                'X) Hydrogen sulfide\n'
+                'Y) Hydrogen selenide [SELL-en-ide]\n'
+                'Z) Hydrogen telluride [TELL-ur-ide]',
+           'a': 'X'},
+          {'q': 'CHEMISTRY Short Answer: Identify all of the following three statements that are TRUE of the Nernst '
+                'equation:\n'
+                '1) The equation does not use the Faraday constant; 2) The standard redox [REE-dox] potential for a '
+                'concentration cell is negative; 3) The Nernst equation accounts for overpotential.',
+           'a': 'NONE OF THEM'},
+          {'q': 'CHEMISTRY Multiple Choice: Which of the following titrations would have an equivalence point with a '
+                'pH closest to 9?\n'
+                'W) Titration of sodium hydroxide with hydrochloric acid\n'
+                'X) Titration of hydrochloric acid with ammonia\n'
+                'Y) Titration of acetic acid with sodium hydroxide\n'
+                'Z) Titration of barium hydroxide with sulfuric acid',
+           'a': 'Y'},
+          {'q': 'CHEMISTRY Short Answer: Identify all of the following three statements that are TRUE of the '
+                'permanganate [pur-MAYNG-en-ate] ion: 1) It is reduced to Mn2+ in neutral solution; 2) It contains '
+                'manganese [MAYN-gan-eez]in the +7 oxidation state; 3) It can be used as an indicator and titrant '
+                '[TIE-trant] in a potentiometric [poh-ten-shee-oh-MEH-tric] titration [tie-TRAY-shun].',
+           'a': '2 AND 3'},
+          {'q': 'CHEMISTRY Short Answer: Identify all of the following three compounds that are a stronger base than '
+                'sodium hydride: 1) T-butyl [t-byu-til] lithium; 2) Ammonia; 3) Sodium tert-butoxide '
+                '[tert-byu-tox-eyed].',
+           'a': 'JUST 1'},
+          {'q': 'CHEMISTRY Short Answer: Identify all of the following three compounds that are most likely to undergo '
+                'electrophilic [ee-lektroh-FILL-ik] aromatic substitution at the meta position: 1) Nitrobenzene;\n'
+                '2) Toluene [TAWL-you-een]; 3) Ethyl benzoate [BEN-zoh-ate].',
+           'a': '1 AND 3'},
+          {'q': 'CHEMISTRY Multiple Choice: Which of the following statements concerning crystal structure is NOT '
+                'true?\n'
+                'W) HCP lattices are more space-filling than FCC lattices\n'
+                'X) Cesium [SEEZ-ee-um] chloride lattices form when anions [AN-eye-ons] and cations [CAT-eye-onz] are '
+                'of roughly equal size\n'
+                'Y) Rock-salt lattices have (6,6)-coordination\n'
+                'Z) The crystal structure of a metal is dependent on pressure and temperature',
+           'a': 'W'},
+          {'q': 'CHEMISTRY Short Answer: Identify all of the following four species that have a square planar '
+                'geometry:\n'
+                '1) Sulfur tetrafluoride [tetrah-FLOOR-ide]; 2) Carbon tetrachloride [tetrah-KLOOR-ide]; 3) Xenon '
+                '[ZEE-non] tetrafluoride; 4) Iodine tetrabromide [tetrah-BROH-mide] anion [AN-eye-on] with a 1– charge',
+           'a': '3 AND 4'},
+          {'q': 'CHEMISTRY Multiple Choice: Consider the gas-phase decomposition of PCl 5 into PCl 3 and Cl 2 . If the '
+                'reaction begins with 5 atmospheres of PCl , and if the partial pressure of chlorine is x atm at '
+                'equilibrium, which of the following\n'
+                '5 expressions for Kp is correct?\n'
+                'W) The fraction with numerator x and denominator 5 minus x\n'
+                'X) The fraction with numerator x and denominator open parenthesis 5 minus x close parenthesis '
+                'squared\n'
+                'Y) The fraction with numerator x squared and denominator 5 minus x\n'
+                'Z) The fraction with numerator x squared and denominator open parenthesis 5 minus x close parenthesis '
+                'squared',
+           'a': 'Y'},
+          {'q': 'CHEMISTRY Short Answer: What is the name of the analytic method in chemistry that uses the spin-flip '
+                'transitions of nuclei to identify the unique electronic bonding environments for a given compound?',
+           'a': 'NMR'},
+          {'q': 'CHEMISTRY Multiple Choice: Which of the following compounds has the highest vapor pressure at 25 '
+                'degrees\n'
+                'Celsius?\n'
+                'W) Water\n'
+                'X) Ethanol\n'
+                'Y) Methanol\n'
+                'Z) Diethyl [dye-eh-thyl] ether [EE-thur]',
+           'a': 'Z'},
+          {'q': 'CHEMISTRY Short Answer: Consider the heating of anhydrous [an-HIGH-drus] solid calcium carbonate to '
+                'form gaseous CO and solid calcium oxide. Identify all of the following three changes that would shift '
+                'this reaction to the right:\n'
+                '2\n'
+                '1) Adding more calcium carbonate; 2) Adding more calcium oxide; 3) Increasing the temperature.',
+           'a': '3'},
+          {'q': 'CHEMISTRY Multiple Choice: Which of the following correctly explains why oxygen exists in a '
+                'double-bonded diatomic [dye-ah-TOM-ik] form whereas sulfur forms S8 chains?\n'
+                'W) Sulfur is too electropositive to form strong pi [pie] bonds\n'
+                "X) Sulfur's 3p orbitals have less overlap for pi bonding\n"
+                'Y) Oxygen is paramagnetic whereas sulfur is diamagnetic [dye-ah-mag-NET-ik]\n'
+                'Z) Sulfur can expand its valence [VAY-lense] shell to hold more than eight electrons',
+           'a': 'X'},
+          {'q': 'CHEMISTRY Short Answer: Identify all of the following three statements that are TRUE concerning '
+                'carbon monoxide: 1) It is a high-field ligand [LIH-gund]; 2) It often forms complexes with neutral '
+                'metal atoms; 3) It is a pi [pie] donor ligand.',
+           'a': '1'},
+          {'q': 'CHEMISTRY Short Answer: Identify all of the following three quantites in reaction kinetics that are '
+                'dimensionless:\n'
+                '1) Rate constant; 2) Steric [steh-rik] factor; 3) Collision frequency.',
+           'a': '2'},
+          {'q': 'CHEMISTRY Short Answer: Identify all of the following three changes that would shift the equilibrium '
+                'of the Haber\n'
+                '[HAH-bur] process to the right: 1) Adding hydrogen gas; 2) Adding an inert gas; 3) Increasing the '
+                'volume of the container at constant temperature.',
+           'a': '1 ONLY'},
+          {'q': 'CHEMISTRY Multiple Choice: Which of the following statements is TRUE concerning SN 2 reactions?\n'
+                'W) Pentavalent [penta-vay-lent] transition state\n'
+                'X) Pentavalent intermediate\n'
+                'Y) Trivalent [try-vay-lent] transition state\n'
+                'Z) Trivalent intermediate',
+           'a': 'W'},
+          {'q': 'CHEMISTRY Short Answer: Identify all of the following three statements concerning crystal structures '
+                'that are true:\n'
+                '1) The FCC lattice fills volume more efficiently than the BCC lattice; 2) The number of atoms in a '
+                'BCC unit cell is 4;\n'
+                '3) The coordination number of an FCC lattice is 12.',
+           'a': '1 AND 3'},
+          {'q': 'CHEMISTRY Multiple Choice: Which of the following compounds would have the largest retention factor '
+                'in a TLC experiment with a silica stationary phase and hexane mobile phase?\n'
+                'W) Benzene\n'
+                'X) Benzoic acid [ben-ZOH-ik]\n'
+                'Y) Phenylacetone [fennel-ASS-eh-tone]\n'
+                'Z) Benzyl [BEN-zil] methyl ether',
+           'a': 'X'},
+          {'q': 'CHEMISTRY Short Answer: Arrange the following three hydrogens in a proton-NMR spectrum in terms of '
+                'increasing chemical shift: 1) Hydrogens in benzene; 2) Aldehyde hydrogen in acetaldehyde '
+                '[asset-AL-de-hide];\n'
+                '3) Hydroxyl [high-DROX-il] group in methanol.',
+           'a': '3, 1, 2'},
+          {'q': 'CHEMISTRY Short Answer: What is the empirical formula for the acid anhydride of phosphoric '
+                '[faws-FOR-ik] acid?',
+           'a': 'P2O5'},
+          {'q': 'CHEMISTRY Short Answer: Identify all of the following four compounds in which London dispersion '
+                'forces dominate intermolecular interactions: 1) Dichloromethane; 2) Neon; 3) Ammonia; 4) Hydrogen.',
+           'a': '2 AND 4'},
+          {'q': 'CHEMISTRY Short Answer: What is the major acidic species that forms when an acid is dissolved in '
+                'water?',
+           'a': 'HYDRONIUM'},
+          {'q': 'CHEMISTRY Short Answer: Identify all of the following three compounds that have a higher lattice '
+                'energy than sodium fluoride: 1) Sodium chloride; 2) Aluminum fluoride; 3) Sodium oxide.',
+           'a': '2 AND 3'},
+          {'q': 'CHEMISTRY Multiple Choice: An alkyne[AL-kine] is added to a reaction vessel containing pressurized '
+                'hydrogen gas and a catalyst consisting of palladium [pah-LAID-ee-um] poisoned by traces of lead(II) '
+                'ions and quinoline [KWIN-oh- lin]. Which of the following is the major product of this reaction?\n'
+                'W) Alkane\n'
+                'X) Cis-alkene [sis-al-KEEN\n'
+                'Y) Trans-alkene\n'
+                'Z) Alcohol',
+           'a': 'X'},
+          {'q': 'CHEMISTRY Short Answer: Identify all of the following three statements that are true concerning '
+                'elimination reactions: 1) E2 is a concerted reaction; 2) E1 is substantially accelerated by strong, '
+                'unhindered bases; 3) Cis-alkenes are often thermodynamically preferred to trans-alkenes.',
+           'a': '1'},
+          {'q': 'CHEMISTRY Multiple Choice: Which of the following methods is LEAST helpful in identifying chiral '
+                '[KYE-ruhl] isomers?\n'
+                'W) X-ray diffraction\n'
+                'X) Quadrupole [QUAD-roo-pole] mass spectrometry [spek-TRAW-metry]\n'
+                'Y) Nuclear magnetic resonance spectroscopy [spek-TRAW-scuh-pee]\n'
+                'Z) Raman [RAH-min] spectroscopy',
+           'a': 'X'},
+          {'q': 'CHEMISTRY Short Answer: Identify all of the following three statements that are true of a mixture of '
+                '96% ethanol and 4% water: 1) The boiling point of the mixture is greater than that of either pure '
+                'ethanol or pure water; 2) The components can be separated by fractional distillation; 3) The mixture '
+                'deviates from Raoult’s [rah-OOLZ] law.',
+           'a': '3'},
+          {'q': 'CHEMISTRY Short Answer: Porphyrin [POOR-feh-rin] is a chelating [KEY-lay-ting] ligand [LIH-gund]. How '
+                'many bonds can it form to a metal center?',
+           'a': '4'},
+          {'q': 'CHEMISTRY Short Answer: Rank the following four compounds in terms of increasing net dipole moment:\n'
+                '1) Carbon dioxide; 2) Hydrogen chloride; 3) Hydrogen fluoride; 4) Carbon monoxide.',
+           'a': '1, 4, 2, 3'},
+          {'q': 'CHEMISTRY Short Answer: Acetylene has a pKa of 25, while hydroxide ions have a pKa of about 16. '
+                'Expressing your answer to the nearest power of 10, if they were mixed in equimolar amounts, one in '
+                'how many molecules of acetylene would be deprotonated?',
+           'a': '9'},
+          {'q': 'CHEMISTRY Short Answer: How many unpaired electrons does high-spin open bracket CoF 6 close bracket '
+                'to the 3 negative have?',
+           'a': '4'},
+          {'q': 'CHEMISTRY Multiple Choice: Which of the following ligands induces the largest electronic d orbital '
+                'splitting in a transition metal complex?\n'
+                'W) Chloro\n'
+                'X) Aqua\n'
+                'Y) Cyano\n'
+                'Z) Ethylenediamine',
+           'a': 'Y'},
+          {'q': 'CHEMISTRY Short Answer: Consider an organic compound with no rings in its structure, and with the '
+                'chemical formula C 12 H 16 O 2 [C twelve H sixteen O two]. What is the number of double bonds in its '
+                'structure?',
+           'a': '5'},
+          {'q': 'CHEMISTRY Multiple Choice: Consider the hypothetical reaction 2A, aqueous, plus 2B, gaseous, yields '
+                '3C, aqueous, plus D, gaseous,where the change in enthalpy of the reaction is -22 kilojoules. Which of '
+                'the following will drive the reaction toward the products?\n'
+                'W) Increasing the temperature\n'
+                'X) Increasing the volume of the reaction vessel at constant temperature\n'
+                'Y) Increasing the pressure\n'
+                'Z) Increasing the amount of D',
+           'a': 'Y'},
+          {'q': 'CHEMISTRY Multiple Choice: Which of the following solvents would most accelerate an SN2 reaction?\n'
+                'W) Hexane\n'
+                'X) Dichloromethane\n'
+                'Y) DMSO\n'
+                'Z) Ethyl acetate',
+           'a': 'Y'},
+          {'q': 'CHEMISTRY Short Answer: Rank the following three elements in terms of increasing electron affinities: '
+                '1) Carbon;\n'
+                '2) Nitrogen; 3) Oxygen.',
+           'a': '2, 1, 3'},
+          {'q': 'CHEMISTRY Short Answer: What effect, which applies to the chemistry of real gases and is exploited in '
+                "the liquefaction of air, causes a gas's temperature to decrease in an adiabatic [ad-ee-ah-BAT-ik] "
+                'isenthalpic expansion?',
+           'a': 'JOULE-THOMSON EFFECT'},
+          {'q': 'CHEMISTRY Short Answer: What is the IUPAC name for the cyclic saturated hydrocarbon containing four '
+                'carbon atoms?',
+           'a': 'CYCLOBUTANE'},
+          {'q': 'CHEMISTRY Short Answer: Identify all of the following three functional groups that commonly '
+                'participate in addition reactions: 1) Aldehyde [AL-deh-hide]; 2) Alkene ; 3) Alkyl [AL-kil] halide '
+                '[HAY-lide].',
+           'a': '1 AND 2'},
+          {'q': 'CHEMISTRY Multiple Choice: Which of the following is not true about early transition metals in '
+                'comparison to late transition metals?\n'
+                'W) Easier to oxidize\n'
+                'X) More electropositive\n'
+                'Y) Higher oxidation states\n'
+                'Z) Larger radii',
+           'a': 'W'},
+          {'q': 'CHEMISTRY Short Answer: Rank the following three hydrogen atoms in terms of increasing pKa: 1) '
+                'Hydrogen atom in a water molecule; 2) Hydrogen atom in acetylene [ah-SET-ihl-een]; 3) Hydroxyl '
+                '[high-DROX-il] hydrogen atom in t-butyl [t-BYU-til] alcohol.',
+           'a': '1, 3, 2'},
+          {'q': 'CHEMISTRY Short Answer: Consider a single-reactant reaction that has a rate constant equal to 24 '
+                'seconds to the negative 1, molar to the negative 2. What is the order of this reaction?',
+           'a': '3'},
+          {'q': 'CHEMISTRY Short Answer: The Heck coupling is a cross-coupling reaction that treats an aryl halide '
+                'with what functional group?',
+           'a': 'ALKENE'},
+          {'q': 'CHEMISTRY Short Answer: Identify all of the following three species that are Lewis acids:\n'
+                '1) Zn2+; 2) Cl- ; 3) BH .\n'
+                '3',
+           'a': '1 AND 3'},
+          {'q': 'CHEMISTRY Multiple Choice: Which of the following statements about a valid wave function is true?\n'
+                'W) A wave function must be single-valued\n'
+                'X) A wave function must approach infinity as r approaches zero\n'
+                'Y) The spatial integral of wave functions for different orbitals in an atom must be one\n'
+                'Z) The integral of the wave function times its own complex conjugate must equal zero',
+           'a': 'W'},
+          {'q': 'CHEMISTRY Short Answer: What is the bond-order of an oxygen-oxygen bond in ozone?', 'a': '1.5'},
+          {'q': 'CHEMISTRY Short Answer: Identify all of the following three statements that are true regarding atomic '
+                'nuclei:\n'
+                '1) The maximum number of protons in a stable nucleus is 92; 2) Nuclei with excess neutrons become '
+                'more stable through beta emission; 3) Nuclei with excess protons can become more stable through '
+                'electron capture.',
+           'a': '2 AND 3'},
+          {'q': 'CHEMISTRY Multiple Choice: Which of the following molecular geometries can exhibit meridional '
+                'isomerism?\n'
+                'W) Linear\n'
+                'X) Square planar\n'
+                'Y) Tetrahedral\n'
+                'Z) Octahedral',
+           'a': 'Z'},
+          {'q': 'CHEMISTRY Short Answer: What is the fewest number of carbonyl [carbon-EEL] stretching bands that can '
+                'be seen in the infrared spectrum of a metal atom that is bound to four CO ligands [LIH-gunz]?',
+           'a': '1'},
+          {'q': 'CHEMISTRY Short Answer: Identify all of the following three fatty acids that are unsaturated: 1) C 13 '
+                'H 27 COOH;\n'
+                '2) C H COOH; 3) C H COOH.\n'
+                '17 35 16 29',
+           'a': 'JUST 3'},
+          {'q': 'CHEMISTRY Short Answer: What reaction in organic chemistry forms alkenes via a reaction of a carbonyl '
+                '[carbon-EEL] group with a yellow-colored phosphorous ylide [ILL-id]?',
+           'a': 'WITTIG REACTION'},
+          {'q': 'CHEMISTRY Short Answer: Identify all of the following four compounds that are polar:\n'
+                '1) XeF ; 2) SF ; 3) BrF ; 4) PF .\n'
+                '4 4 5 5',
+           'a': '2 AND 3'},
+          {'q': 'CHEMISTRY Multiple Choice: Which of the following is NOT one of the seven crystal lattice systems?\n'
+                'W) Orthorhombic\n'
+                'X) Monoclinic\n'
+                'Y) Octagonal\n'
+                'Z) Cubic',
+           'a': 'Y'},
+          {'q': 'CHEMISTRY Short Answer: Within a valence bond interpretation, what is the hybridization of the carbon '
+                'atoms’ valence electrons in the ethylene molecule?',
+           'a': 'SP2'},
+          {'q': 'CHEMISTRY Multiple Choice: Which of the following elements has an electron configuration that follows '
+                'the simple order of orbital filling?\n'
+                'W) Technetium [tek-NEE-shee-um]\n'
+                'X) Ruthenium [roo-THEE-nee-um]\n'
+                'Y) Rhodium\n'
+                'Z) Palladium [pah-LAID-ee-um]',
+           'a': 'W'}, {'q': 'CHEMISTRY Short Answer: Given the percentages by mass of different elements in a compound, identify '
                 'all of the following three characteristics of the compound that can be uniquely determined:1) The '
                 'empirical formula; 2) The molecular formula; 3) The structure',
            'a': '1'},
@@ -2485,7 +4075,517 @@ questions = {'phy': [{'q': 'PHYSICS Short Answer: Planck was able to describe th
                'X) Eosinophils [ee-oh-SIN-oh-filz]\n'
                'Y) Basophils [BAY-zoh-filz]\n'
                'Z) Mast cells',
-          'a': 'X'}],
+          'a': 'X'}, {'q': 'BIOLOGY Multiple Choice: What is the most abundant protein in the world?\n'
+               'W) Hemoglobin\n'
+               'X) Rubisco\n'
+               'Y) Collagen\n'
+               'Z) Actin',
+          'a': 'X'},
+         {'q': 'BIOLOGY Multiple Choice: Which of the following is a constituent of blood plasma but NOT of blood '
+               'serum?\n'
+               'W) Hemoglobin\n'
+               'X) Fibrinogen [fye-BRIN-oh-jen]\n'
+               'Y) Albumin [al-BYOO-min]\n'
+               'Z) Urea',
+          'a': 'X'},
+         {'q': 'BIOLOGY Multiple Choice: Which of the following statements is true of root hairs?\n'
+               'W) They increase the surface area of the root for absorption of water\n'
+               'X) They are located in each stomate on the root\n'
+               'Y) They are found on both stems and roots\n'
+               'Z) They are involved in mechanical stabilization of the plant',
+          'a': 'W'},
+         {'q': 'BIOLOGY Short Answer: To what phylum [FYE-lum] do snails belong?', 'a': 'MOLLUSCA'},
+         {'q': 'BIOLOGY Short Answer: What human organ produces fibrinogen [fye-BRIN-oh-jen]?', 'a': 'LIVER'},
+         {'q': 'BIOLOGY Multiple Choice: In humans, the suprachiasmatic nucleus or "biological clock" is located in '
+               'which of the following parts of the brain?\n'
+               'W) Pineal [PIN-ee-ul] gland\n'
+               'X) Hypothalamus [high-poh-THAL-ah-mus]\n'
+               'Y) Cerebral [seh-REE-brul] cortex\n'
+               'Z) Cerebellum [sarah-BELL-um]',
+          'a': 'X'},
+         {'q': 'BIOLOGY Short Answer: In what human organ can one find cells possessing intercalated '
+               '[in-TER-cah-lated] disks?',
+          'a': 'HEART'},
+         {'q': 'BIOLOGY Short Answer: In protostomes, what structure does the blastopore become?', 'a': 'MOUTH'},
+         {'q': 'BIOLOGY Multiple Choice: The three-dimensional or folded shape of a protein is what hierarchical '
+               'structure level?\n'
+               'W) Primary\n'
+               'X) Secondary\n'
+               'Y) Tertiary\n'
+               'Z) Quaternary',
+          'a': 'Y'},
+         {'q': 'BIOLOGY Multiple Choice: Which of the following is NOT a basis for assays to measure cell numbers or '
+               'cell proliferation?\n'
+               'W) Presence of cell proliferation antigens\n'
+               'X) Rate of DNA replication\n'
+               'Y) Rate of RNA replication\n'
+               'Z) Measurement of ATP concentration',
+          'a': 'Y'},
+         {'q': 'BIOLOGY Multiple Choice: In what part of a plant is the casparian strip located?\n'
+               'W) The bark\n'
+               'X) The stomatal guard cells\n'
+               'Y) The endodermis of the root\n'
+               'Z) The stem cortex',
+          'a': 'Y'},
+         {'q': 'BIOLOGY Short Answer: What type of symmetry do platyhelminths [plat-ih-HELL-minths] possess?',
+          'a': 'BILATERAL'},
+         {'q': 'BIOLOGY Short Answer: What type of muscle is found in the intestinal wall?', 'a': 'SMOOTH'},
+         {'q': 'BIOLOGY Multiple Choice: Metallothionein [meh-talloh-THIGH-uh-nin] is a protein that has been '
+               'engineered into rice in order to promote iron uptake in the small intestine. This is because iron '
+               'uptake requires which of the following elements?\n'
+               'W) Phosphorus\n'
+               'X) Selenium\n'
+               'Y) Sulfur\n'
+               'Z) Chlorine',
+          'a': 'Y'},
+         {'q': 'BIOLOGY Short Answer: What type of cells are found in the lacunae [lah-KOO-nay] of cartilage?',
+          'a': 'CHONDROCYTES'},
+         {'q': 'BIOLOGY Short Answer: Identify all of the following three cell types that are leukocytes '
+               '[LOO-koh-sites]:\n'
+               '1) Eosinophil [ee-oh-SIN-oh-fil]; 2) Basophil [BAY-zoh-fil]; 3) Erythrocyte [eh-RITH-roh-site].',
+          'a': '1 AND 2'},
+         {'q': 'BIOLOGY Multiple Choice: A deficiency of what trace element can result in goiter?\n'
+               'W) Sodium\n'
+               'X) Chlorine\n'
+               'Y) Potassium\n'
+               'Z) Iodine',
+          'a': 'Z'},
+         {'q': 'BIOLOGY Multiple Choice: Which of the following is NOT a symptom or sign of a person suffering from '
+               'diabetes mellitus ?\n'
+               'W) Increase in protein breakdown\n'
+               'X) Presence of sugar in urine\n'
+               'Y) Decrease in the amount of urine production\n'
+               'Z) Increased levels of blood glucose',
+          'a': 'Y'},
+         {'q': 'BIOLOGY Multiple Choice: Which of the following is the adjective for a leaf arrangement in which two '
+               'leaves are present at each node?\n'
+               'W) Opposite\n'
+               'X) Alternate\n'
+               'Y) Whorled\n'
+               'Z) Sessile',
+          'a': 'W'},
+         {'q': 'BIOLOGY Short Answer: What is the highest level of protein structure found in hemoglobin?',
+          'a': 'QUATERNARY'},
+         {'q': 'BIOLOGY Short Answer: What is the name of the muscle attachment point that remains relatively '
+               'stationary during contraction?',
+          'a': 'ORIGIN'},
+         {'q': 'BIOLOGY Multiple Choice: When viewed under a microscope, a eukaryotic [YOU-care-ee-AW-tic] cell has '
+               'visible chromosomes. In what phase of the cell cycle is the cell?\n'
+               'W) M\n'
+               'X) S\n'
+               'Y) G1 [G one]\n'
+               'Z) G-zero [g-zero]',
+          'a': 'W'},
+         {'q': 'BIOLOGY Short Answer: The hamstrings allow flexion of what joint?', 'a': 'KNEE'},
+         {'q': 'BIOLOGY Short Answer: In humans, what group of muscles produce extension of the knee joint, such as '
+               'during jumping?',
+          'a': 'QUADRICEPS'},
+         {'q': 'BIOLOGY Multiple Choice: Which chamber in the heart has the highest systolic pressure?\n'
+               'W) Right atrium\n'
+               'X) Right ventricle\n'
+               'Y) Left atrium\n'
+               'Z) Left ventricle',
+          'a': 'Z'},
+         {'q': 'BIOLOGY Short Answer: List the correct order of a secretory protein pathway from synthesis to '
+               'secretion:\n'
+               '1) Golgi apparatus; 2) Endoplasmic reticulum [reh-TIK-yoo-lum]; 3) Plasma membrane.',
+          'a': '2, 1, 3'},
+         {'q': 'BIOLOGY Multiple Choice: Grasses provide an example of a root system that is best described as which '
+               'of the following?\n'
+               'W) Monocot tap\n'
+               'X) Dicot tap\n'
+               'Y) Monocot fibrous\n'
+               'Z) Dicot fibrous',
+          'a': 'Y'},
+         {'q': 'BIOLOGY Short Answer: If a Gram stain were performed on E. coli [ee COLE-eye] with saffranin '
+               '[SAFF-rah-nin] as the counterstain, what color would the bacteria appear to be?',
+          'a': 'RED'},
+         {'q': 'BIOLOGY Short Answer: What is the repeating unit found in skeletal muscles?', 'a': 'SARCOMERE'},
+         {'q': 'BIOLOGY Multiple Choice: Chaperonins [shap-ur-OH-ninz] are involved in which of the following '
+               'processes?\n'
+               'W) Guiding metabolites to cellular compartments\n'
+               'X) Ensuring proper protein folding\n'
+               'Y) Breaking down ubiquitin [you-BIH-kwih-tin] tagged proteins\n'
+               'Z) Breaking down disaccharides',
+          'a': 'X'},
+         {'q': 'BIOLOGY Short Answer: In the sarcomere, what protein is found as filaments twisted into a double '
+               'helix?',
+          'a': 'ACTIN'},
+         {'q': 'BIOLOGY Short Answer: Identify all of the following three types of muscle that can contract strongly '
+               'even when stretched : 1) Cardiac; 2) Skeletal; 3) Smooth.',
+          'a': '3'},
+         {'q': 'BIOLOGY Multiple Choice: Sap that is used in making maple syrup is transported by what organ?\n'
+               'W) Epidermis\n'
+               'X) Xylem\n'
+               'Y) Phloem\n'
+               'Z) Pith',
+          'a': 'X'},
+         {'q': 'BIOLOGY Short Answer: The sliding filament theory of muscle contraction primarily involves what two '
+               'proteins?',
+          'a': 'ACTIN AND MYOSIN'},
+         {'q': 'BIOLOGY Multiple Choice: Apical dominance in plants means that:\n'
+               'W) The apical bud stimulates vertical growth\n'
+               'X) The apical bud inhibits auxin production\n'
+               'Y) The apical bud stimulates floral development\n'
+               'Z) The apical bud inhibits the growth of lateral buds',
+          'a': 'Z'},
+         {'q': 'BIOLOGY Short Answer: Identify all of the following three structures that possess a double membrane: '
+               '1) Lysosome\n'
+               '[LYE-soh-sohm]; 2) Nucleus; 3) Ribosome [RYE-beh-sohme].',
+          'a': '2'},
+         {'q': 'BIOLOGY Short Answer: Calcium ions activate muscle contraction because they move what protein from '
+               'thin filaments?',
+          'a': 'TROPOMYOSIN'},
+         {'q': 'BIOLOGY Multiple Choice: Ferredoxin is an electron-transfer protein that contains which of the '
+               'following?\n'
+               'W) Heme [heem] group\n'
+               'X) Iron-sulfur cluster\n'
+               'Y) Zinc finger\n'
+               'Z) Leucine [LOO-seen] zipper',
+          'a': 'X'},
+         {'q': 'BIOLOGY Short Answer: What two blood-sugar-relevant hormones are secreted by the islets [EYE-lets] of '
+               'Langerhans [LAYN-gur-honz]?',
+          'a': 'GLUCAGON AND INSULIN'},
+         {'q': 'BIOLOGY Short Answer: What acid is produced by parietal [pah-RYE-eht-ul] cells?',
+          'a': 'HYDROCHLORIC ACID'},
+         {'q': 'BIOLOGY Multiple Choice: In green plants, energy is stored mainly in which of the following forms?\n'
+               'W) Cellulose\n'
+               'X) Starch\n'
+               'Y) Glucose\n'
+               'Z) ATP',
+          'a': 'X'},
+         {'q': 'BIOLOGY Short Answer: What sheet of muscle separates the thoracic and abdominopelvic cavities?',
+          'a': 'DIAPHRAGM'},
+         {'q': 'BIOLOGY Multiple Choice: Which of the following types of tissue do monocot roots possess at their '
+               'center that dicot roots do not?\n'
+               'W) Xylem\n'
+               'X) Pith\n'
+               'Y) Collenchyma [koh-LEN-kimma]\n'
+               'Z) Trichomes',
+          'a': 'X'},
+         {'q': 'BIOLOGY Short Answer: Identify all of the following three processes that are considered active '
+               'transport: 1) Uptake of glucose via channels; 2) Sodium-calcium exchange; 3) Mucus secretion.',
+          'a': '2 AND 3'},
+         {'q': 'BIOLOGY Short Answer: In collies, what neurotransmitter is released by somatic motor neurons to induce '
+               'muscle contraction?',
+          'a': 'ACETYLCHOLINE'},
+         {'q': 'BIOLOGY Multiple Choice: With which of the following is protein binding to a TATA [TAH-tah] box '
+               'activity associated?\n'
+               'W) DNA replication\n'
+               'X) Transcription\n'
+               'Y) Translation\n'
+               'Z) Elongation',
+          'a': 'X'},
+         {'q': 'BIOLOGY Short Answer: Rickets is caused by a deficiency of what vitamin?', 'a': 'VITAMIN D'},
+         {'q': 'BIOLOGY Short Answer: Identify all of the following three molecules that are exocrine [EX-oh-krin] '
+               'products:\n'
+               '1) EGF; 2) Amylase; 3) ADH.',
+          'a': '2'},
+         {'q': 'BIOLOGY Short Answer: What leukocyte [LOO-koh-site] can have up to a five-lobed nucleus and plays a '
+               'role in phagocytosis [fag-oh-sye-TOW-sis] of bacteria?',
+          'a': 'NEUTROPHIL'},
+         {'q': 'BIOLOGY Short Answer: What type of immune cells use perforins [PUR-fur-ins] to induce cell death in '
+               'infected body cells?',
+          'a': 'NK CELLS'},
+         {'q': 'BIOLOGY Multiple Choice: Sutures are an example of what type of joint?\n'
+               'W) Synovial [sin-OH-vee-ul]\n'
+               'X) Saddle\n'
+               'Y) Disk\n'
+               'Z) Immovable',
+          'a': 'Z'},
+         {'q': "BIOLOGY Multiple Choice: Hansen's disease is caused by which of the following genera of bacteria?\n"
+               'W) Streptococcus [strep-toh-kokkus]\n'
+               'X) Helicobacter [HEEL-ik-oh-bak-tur]\n'
+               'Y) Mycobacterium [MY-koh-bacterium]\n'
+               'Z) Vibrio [VIH-bree-oh]',
+          'a': 'Y'},
+         {'q': 'BIOLOGY Multiple Choice: Which of the following organelles would likely contain a high concentration '
+               'of catalase\n'
+               '[CAT-ah-lace]?\n'
+               'W) Glyoxysome [glye-OX-ih-sowm]\n'
+               'X) Mitochondrion [my-tow-KON-dree-on]\n'
+               'Y) Peroxisome [per-OX-ih-zohm]\n'
+               'Z) Chloroplast [KLOR-oh-plast]',
+          'a': 'Y'},
+         {'q': 'BIOLOGY Multiple Choice: Which of the following best describes the relationship between glucose and '
+               'fructose?\n'
+               'W) Diastereomers [dye-ah-STARE-ee-oh-murz]\n'
+               'X) Epimers [eh-pih-mur]\n'
+               'Y) Stereoisomers [stereo-EYE-soh-murz]\n'
+               'Z) Structural isomers [eye-soh-murz]',
+          'a': 'Z'},
+         {'q': 'BIOLOGY Short Answer: What area of the eye has a high concentration of cones and is so crucial for '
+               'sharp vision that raptors have two?',
+          'a': 'FOVEA'},
+         {'q': 'BIOLOGY Short Answer: Identify all of the following four options that are examples of determinate '
+               'growth in plants: 1) Shoots; 2) Roots; 3) Flowers; 4) Leaves.',
+          'a': '3 AND 4'},
+         {'q': 'BIOLOGY Short Answer: What type of leukocyte [LOO-koh-site] is involved in phagocytosis '
+               '[fag-oh-sye-TOW-sis] of antigen-antibody complexes and parasites?',
+          'a': 'EOSINOPHIL'},
+         {'q': 'BIOLOGY Short Answer: Angiotensin [an-jee-oh-TEN-sin] acts on the adrenal [Ah-DREE-nul] cortex to '
+               'promote secretion of what hormone?',
+          'a': 'ALDOSTERONE'},
+         {'q': 'BIOLOGY Multiple Choice: Which of the following organisms is characterized as a parazoan '
+               '[para-ZOH-an]?\n'
+               'W) Sponge\n'
+               'X) Sea cucumber\n'
+               'Y) Jellyfish\n'
+               'Z) Tapeworm',
+          'a': 'W'},
+         {'q': 'BIOLOGY Multiple Choice: Which of the following is an example of simple squamous [SKWAY-mus] '
+               'epithelium [eh-pih-THEEL-ee-um]?\n'
+               'W) Stomach lining\n'
+               'X) Intestinal lining\n'
+               'Y) Lung lining\n'
+               'Z) Skin',
+          'a': 'Y'},
+         {'q': 'BIOLOGY Multiple Choice: Zinc finger motifs are commonly found in proteins that do which of the '
+               'following?\n'
+               'W) Hydrolyze [HIGH-droh-lyze] sugars\n'
+               'X) Sequester calcium\n'
+               'Y) Catalyze polymerization [pawl-ih-mer-eh-ZAY-shun]\n'
+               'Z) Bind to DNA',
+          'a': 'Z'},
+         {'q': 'BIOLOGY Multiple Choice: Which of the following is a correct classification of spectrin proteins?\n'
+               'W) Transmembrane\n'
+               'X) Receptor\n'
+               'Y) Channel\n'
+               'Z) Cytoskeletal [SIGH-toh-skeletal]',
+          'a': 'Z'},
+         {'q': 'BIOLOGY Short Answer: What is the net ATP gain during glycolysis [glye-KAWL-eh-sis], per molecule of '
+               'glucose?',
+          'a': 'TWO'},
+         {'q': 'BIOLOGY Short Answer: In a young stem, what is the name for the immature tissues that will '
+               'specifically develop into xylem and phloem?',
+          'a': 'PROCAMBIUM'},
+         {'q': 'BIOLOGY Multiple Choice: Which of the following correctly explains why fish cannot breathe outside of '
+               'water?\n'
+               'W) Air contains less oxygen than water\n'
+               'X) Their gas exchange systems are tuned to dissolved oxygen\n'
+               'Y) In air, their gills collapse\n'
+               'Z) Air provides more structural support to the fish',
+          'a': 'Y'},
+         {'q': 'BIOLOGY Short Answer: Identify all of the following three items that are considered rhizopods: 1) '
+               'Kelp; 2) Amoeba;\n'
+               '3) Euglenid [you-GLEE-nids].',
+          'a': 'JUST 2'},
+         {'q': 'BIOLOGY Multiple Choice: Which of the following is an example of a Chrysophytan [Cris-AW-fih-tan]?\n'
+               'W) Amoeba [ah-MEE-bah]\n'
+               'X) Trypanoma [trih-pan-OH-ma]\n'
+               'Y) Plasmodium [plazz-MOH-dee-um]\n'
+               'Z) Diatom [DYE-ah-tom]',
+          'a': 'Z'},
+         {'q': 'BIOLOGY Short Answer: Given that hemoglobin is 144 amino acids long, identify all of the following '
+               'three numbers of nucleotides that can be in the primary mRNA transcript of hemoglobin at different '
+               'stages of processing:\n'
+               '1) 144; 2) 432; 3) 1356.',
+          'a': 'JUST 3'},
+         {'q': 'BIOLOGY Short Answer: What structural molecule do Gram positive bacteria possess in large quantities?',
+          'a': 'PEPTIDOGLYCAN'},
+         {'q': 'BIOLOGY Short Answer: Identify all of the following three types of ion channels that are open during '
+               'the falling phase of the action potential: 1) Voltage gated sodium; 2) Voltage gated potassium; 3) '
+               'Ligand[LIH-gund] gated sodium.',
+          'a': 'JUST 2'},
+         {'q': 'BIOLOGY Short Answer: In the spinal cord, cell bodies of sensory neurons are grouped together to form '
+               'what structures?',
+          'a': 'DORSAL ROOT GANGLIA'},
+         {'q': 'BIOLOGY Short Answer: Identify all of the following three responses that are actions of the '
+               'sympathetic nervous system: 1) Pupil constriction; 2) Increased heart rate; 3) Vasodilation '
+               '[vay-zoh-dye-LAY-shun] in muscles.',
+          'a': '2 AND 3'},
+         {'q': 'BIOLOGY Multiple Choice: What aspect of a reaction does an enzyme change?\n'
+               'W) Free energy\n'
+               'X) Entropy [EN-troh-pee]\n'
+               'Y) Enthalpy [EN-thul-pee]\n'
+               'Z) Activation energy',
+          'a': 'Z'},
+         {'q': 'BIOLOGY Multiple Choice: What do amoebas use in order to move around?\n'
+               'W) Cilia [SILL-ee-ah]\n'
+               'X) Flagella [Flah-JEL-ah]\n'
+               'Y) Pseudopodia [soo-dah-POH-dee-ah]\n'
+               'Z) Asters',
+          'a': 'Y'},
+         {'q': 'BIOLOGY Multiple Choice: Which of the following statements about monocots and dicots is NOT correct?\n'
+               'W) Monocots have three holes in their pollen, while dicots only have one\n'
+               'X) Monocots have scattered vascular bundles, while dicot bundles are in a ring\n'
+               'Y) Monocots lack a pith region in the stem, while dicots have a pith\n'
+               'Z) Monocots have parallel venation in their leaves while dicots have netted veins',
+          'a': 'W'},
+         {'q': 'BIOLOGY Multiple Choice: Which of the following pairs of terms referring to the life cycle of land '
+               'plants is mismatched with the correct ploidy?\n'
+               'W) Megasporangium [mega-spor-AYN-gee-um] and diploid\n'
+               'X) Sporocyte and diploid\n'
+               'Y) Egg and haploid\n'
+               'Z) Integument and haploid',
+          'a': 'Z'},
+         {'q': 'BIOLOGY Short Answer: What virus causes mononucleosis [mono-new-klee-OH-sis] in humans?',
+          'a': 'EPSTEIN-BARR VIRUS'},
+         {'q': 'BIOLOGY Short Answer: In a developing root, there are three regions: the region of cell division, the '
+               'region of cell elongation, and the region of maturation. What external feature of the epidermis allows '
+               'one to know they have located the region of maturation?',
+          'a': 'ROOT HAIRS'},
+         {'q': 'BIOLOGY Short Answer: What hormone targets the kidneys and stimulates reabsorption of water from '
+               'urine?',
+          'a': 'ADH'},
+         {'q': 'BIOLOGY Short Answer: What thyroid hormone plays a role in inhibiting calcium loss from bones?',
+          'a': 'CALCITONIN'},
+         {'q': 'BIOLOGY Short Answer: What is the adjective for the type of nephron [NEF-ron] that possesses long '
+               'loops of Henle\n'
+               '[HEN-lee] in order to promote water reabsorption?',
+          'a': 'JUXTAMEDULLARY'},
+         {'q': 'BIOLOGY Short Answer: Rank the following four plasma proteins in terms of increasing mass:\n'
+               '1) Fibrinogen [fye-BRIN-oh-jen]; 2) Transferrin [trans-FEH-rin]; 3) Albumin [al-BYOO-min];\n'
+               '4) Immunoglobulin G [immune-oh-GLOB-yuh-lin G].',
+          'a': '3, 2, 4, 1'},
+         {'q': 'BIOLOGY Multiple Choice: Which of the following scientific names correctly describes a family of '
+               'plants?\n'
+               'W) Quercus rubra\n'
+               'X) Liliaceae [lilly-AY-see-eye]\n'
+               'Y) Poales [Poh-AY-leez]\n'
+               'Z) Magnoliophyta [mag-NO-lee-oh-FYE-tah]',
+          'a': 'X'},
+         {'q': 'BIOLOGY Short Answer: Identify all of the following three statements that are true of second '
+               'messengers:\n'
+               '1) Phospholipase [faws-fo-LYE-pace] C catalyzes the release of IP3; 2) Cells store calcium in the '
+               'nucleus;\n'
+               '3) Calmodulin [kal-MOD-u-lin] binds to cyclic GMP.',
+          'a': '1'},
+         {'q': 'BIOLOGY Short Answer: Which animal phylum [FYE-lum] contains the most extant species?',
+          'a': 'ARTHROPODA'},
+         {'q': 'BIOLOGY Short Answer: Identify all of the following three nucleobases that are purines [PURE-eenz]: 1) '
+               'Guanine\n'
+               '[GWAH-neen]; 2) Uracil [YUR-ah-sil]; 3) Thymine [THIGH-meen].',
+          'a': '1'},
+         {'q': 'BIOLOGY Short Answer: What protein hormone, missing in obese mice with mutations in the ob [O.B.] '
+               'gene, is responsible for controlling satiety [SAY-sha-tee]?',
+          'a': 'LEPTIN'},
+         {'q': 'BIOLOGY Short Answer: When fasting, the liver will convert amino acids to glucose. What is the name of '
+               'this process?',
+          'a': 'GLUCONEOGENESIS'},
+         {'q': 'BIOLOGY Short Answer: Identify all of the following three genera [JEN-er-ah] of bacteria that are Gram '
+               'positive:\n'
+               '1) Escherichia [eh-sher-EE-kee-ah]; 2) Salmonella; 3) Vibrio [VIH-bree-oh].',
+          'a': 'NONE'},
+         {'q': 'BIOLOGY Short Answer: Identify the ploidy level for the following three plant life stages: 1) '
+               'Sporophyte;\n'
+               '2) Gametophyte; 3) Spore.',
+          'a': '1) DIPLOID, 2) HAPLOID, 3) HAPLOID'},
+         {'q': 'BIOLOGY Short Answer: What second messenger is produced by adenylyl [ah-DEN-il-il] cyclase '
+               '[SIGH-klayse]?',
+          'a': 'CYCLIC AMP'},
+         {'q': 'BIOLOGY Short Answer: In a signalling pathway, a certain step requires the removal of a phosphate '
+               'group from a protein. What general type of enzyme would perform this reaction?',
+          'a': 'PHOSPHATASE'},
+         {'q': 'BIOLOGY Short Answer: What enzyme is the major regulation site of glycolysis [glye-KAWL-eh-sis]?',
+          'a': 'PHOSPHOFRUCTOKINASE'},
+         {'q': 'BIOLOGY Short Answer: In glycolysis [glye-KAWL-eh-sis], what enzyme catalyzes the initial '
+               'phosphorylation\n'
+               '[faws-four-il-AY-shun] of glucose, preventing it from leaving the cell?',
+          'a': 'HEXOKINASE'},
+         {'q': 'BIOLOGY Multiple Choice: Which of the following cell types is associated with haversian [ha-VER-zhen] '
+               'canals?\n'
+               'W) Osteocytes [AW-steo-sites]\n'
+               'X) Chondrocytes [KON-droh-sites]\n'
+               'Y) Fibroblasts\n'
+               'Z) Leukocytes [LOO-koh-sites]',
+          'a': 'W'},
+         {'q': 'BIOLOGY Short Answer: Identify all of the following four plants that have evolved mechanisms to reduce '
+               'bio-energetically wasteful photorespiration: 1) Cactus; 2) Oak trees; 3) Potatoes; 4) Rice.',
+          'a': '1'},
+         {'q': 'BIOLOGY Short Answer: What is the genus [JEE-nus] of the harmless gut bacterium that can be '
+               'transformed by a bacteriophage [bak-TEER-ee-oh-fayj] into a virulent [VEER-yoo-lent] form associated '
+               'with cholera [CALL-ur-ah]?',
+          'a': 'VIBRIO'},
+         {'q': 'BIOLOGY Multiple Choice: A disease-linked, spontaneous, congenital [kon-GEH-nih-tul] germ line '
+               'mutation creates a restriction site for HaeIII [HAY-three]. A diagnostic test for this mutation '
+               'involves restriction digestion with endonuclease [en-doh-NEW-klee-ase] HaeIII. If the DNA of a patient '
+               'with this mutation is tested and imaged using an agarose [AH-gah-rohs] gel, which of the following is '
+               'expected?\n'
+               'W) No diagnostic point mutation exists on either maternal or paternal chromosomes\n'
+               'X) Both maternal and paternal chromosomes have the diagnostic point mutation\n'
+               'Y) Either the maternal or the paternal chromosome has the point mutation, but not both\n'
+               'Z) The test was inconclusive',
+          'a': 'Y'},
+         {'q': 'BIOLOGY Short Answer: What viral reproductive cycle kills the infected host cell while the virus is '
+               'dividing?',
+          'a': 'LYTIC CYCLE'},
+         {'q': 'BIOLOGY Short Answer: What is the number of cells present in a mature male angiosperm gametophyte?',
+          'a': '3'},
+         {'q': 'BIOLOGY Short Answer: The Ti (tie) plasmid can be used to stably transfect some plants with '
+               'recombinant DNA.\n'
+               'What is the genus of the bacterium that is a vector for this plasmid?',
+          'a': 'AGROBACTERIUM'},
+         {'q': 'BIOLOGY Short Answer: Identify all of the following four cell types involved in plant transport '
+               'physiology that are non-living yet functional when mature: 1) Parenchyma [pah-REN-kimma]; 2) Sclereid '
+               '[SKLAIR-ee-id]; 3) Sieve tube;\n'
+               '4) Tracheid [TRAY-kee-id]',
+          'a': '2 AND 4'},
+         {'q': 'BIOLOGY Multiple Choice: Which of the following organisms possesses cnidocytes [NYE-doh-sites]?\n'
+               'W) Tapeworm\n'
+               'X) Jellyfish\n'
+               'Y) Starfish\n'
+               'Z) Sea cucumber',
+          'a': 'X'},
+         {'q': 'BIOLOGY Short Answer: Rank the following four proteins in order of increasing oxygen-binding '
+               'affinity:\n'
+               '1) Adult hemoglobin at pH 7.4; 2) Fetal hemoglobin; 3) Adult hemoglobin at pH 7.2; 4) Myoglobin.',
+          'a': '3, 1, 2, 4'},
+         {'q': 'BIOLOGY Short Answer: What is the term for cancers that arise in epithelial [eh-pih-THEEL-ee-ul] '
+               'tissues?',
+          'a': 'CARCINOMA'},
+         {'q': 'BIOLOGY Short Answer: Identify all of the following three statements that are true regarding tendrils '
+               'in plants:\n'
+               '1) They can only be found in dicot vines; 2) They can be modified stems, leaves, or flower stalks; 3) '
+               'They are primarily used for climbing.',
+          'a': '2 AND 3'},
+         {'q': 'BIOLOGY Short Answer: From what group of organisms are restriction enzymes isolated?', 'a': 'BACTERIA'},
+         {'q': 'BIOLOGY Short Answer: What storage polysaccharide that is found in animals contains highly branched '
+               'chains of sugars containing 1, 4 and 1, 6 linkages?',
+          'a': 'GLYCOGEN'},
+         {'q': 'BIOLOGY Short Answer: What technique would scientists use if they wanted to amplify a small region of '
+               'DNA?',
+          'a': 'PCR'},
+         {'q': 'BIOLOGY Short Answer: MPF, or mitosis [my-TOW-sis] promoting factor, is a complex between a CDK and a '
+               'protein of what class?',
+          'a': 'CYCLIN'},
+         {'q': 'BIOLOGY Multiple Choice: The majority of speciation [spee-see-AY-shun] occurs under which of the '
+               'following circumstances?\n'
+               'W) When populations undergo sexual selection\n'
+               'X) When populations become geographically separated\n'
+               'Y) When populations are R selected\n'
+               'Z) When populations reach carrying capacity',
+          'a': 'X'},
+         {'q': 'BIOLOGY Short Answer: A bacterial colony is raised in heavy nitrogen media for several generations, '
+               'then transferred to a nitrogen-14 medium. Identify all of the following statements that will be true '
+               'after one generation: 1) Half of the bacteria will have denser DNA than the other half; 2) Half of the '
+               'bacteria will have no heavy nitrogen in their DNA;\n'
+               '3) Half of the bacteria will have no nitrogen-14 in their DNA.',
+          'a': 'NONE'},
+         {'q': 'BIOLOGY Short Answer: Methylation [meth-il-AY-shun] of cytosine [sigh-toh-seen] was once thought to '
+               'play an important role in repressing gene regulation. Deamination [dee-am-ih-NAY-shun] of\n'
+               '5-methylcytosine [five methil-SYE-toh-seen] results in the production of what other nucleobase?',
+          'a': 'THYMINE'},
+         {'q': 'BIOLOGY Short Answer: Identify all of the following three disorders that are usually inherited '
+               'dominantly:\n'
+               '1) Huntington’s disease; 2) Albinism [AL-beh-nih-zim]; 3) Polydactyly [polly-DAK-til-ee].',
+          'a': '1 AND 3'},
+         {'q': 'BIOLOGY Short Answer: In E. coli, a certain gene undergoes a mutation such that the resulting protein '
+               'is much larger in size and now non-functional. What type of mutation likely occurred?',
+          'a': 'INSERTION'},
+         {'q': 'BIOLOGY Short Answer: A scientist crosses a pea plant that is true breeding for the dominant traits of '
+               'round and yellow seeds with a plant that is true breeding for wrinkled, green seeds. What fraction of '
+               'the offspring will have round, green seeds?',
+          'a': '0'},
+         {'q': 'BIOLOGY Short Answer: What is the term for mobile elements of DNA that can cut and paste themselves '
+               'into new locations?',
+          'a': 'TRANSPOSONS'},
+         {'q': 'BIOLOGY Short Answer: Identify all of the following three statements that are true regarding plant '
+               'hormones:\n'
+               '1) Auxin plays an important role in gravitropism; 2) Abscisic [ab-SIH-zik] acid inhibits primary and '
+               'secondary growth; 3)\n'
+               'Cytokinin [sigh-toh-KYE-nin] increases rate of leaf senescence [sen-EH-sense].',
+          'a': '1 AND 2'}],
  'math': [{'q': 'MATH Multiple Choice: Matrices with which of the following pairs of dimensions cannot be multiplied '
                 'together?\n'
                 'W) 3 rows, 2 columns times 2 rows, 3 columns\n'
@@ -2917,7 +5017,338 @@ questions = {'phy': [{'q': 'PHYSICS Short Answer: Planck was able to describe th
           {'q': 'MATH Short Answer: Simplify i raised to the 22nd power.', 'a': '–1'},
           {'q': 'MATH Short Answer: In a circle with radius 4, what is the area of a circular segment defined by an '
                 'arc of 45°?',
-           'a': '2pi - 4√2'}],
+           'a': '2pi - 4√2'}, {'q': 'MATH Short Answer: Giving your answer as a decimal, increasing a number by 250% is equivalent to '
+                'multiplying it by what?',
+           'a': '3.5'},
+          {'q': 'MATH Short Answer: A rhombus has a diagonal of length 14 and a perimeter of 48. What is the length of '
+                'the other diagonal?',
+           'a': '2√95'},
+          {'q': 'MATH Short Answer: What is the distance between the points (–1, 2) and (–10, 9)?', 'a': '√130'},
+          {'q': 'MATH Short Answer: Identify all of the following 3 numbers that are evenly divisible by eight:\n'
+                '1) 3,247,456; 2) 4,693,532; 3) 789,152.',
+           'a': '1 and 3'},
+          {'q': 'MATH Short Answer: Solve the following equation for x: log base 3 of open parenthesis x + 5 close '
+                'parenthesis = 4?',
+           'a': '76'},
+          {'q': 'MATH Short Answer: If cosine of x times sine of x equals 1/5, what is the value of open parenthesis '
+                'cosine of x minus sine of x close parenthesis squared?',
+           'a': '3/5'},
+          {'q': 'MATH Short Answer: Express as a fraction the repeating decimal 0.181818, with repeating part '
+                'one-eight.',
+           'a': '2/11'},
+          {'q': 'MATH Short Answer: What is the slope-intercept equation of the line tangent to the graph of y = x3 + '
+                'x2 at the point (1,2)?',
+           'a': 'y = 5x – 3'},
+          {'q': 'MATH Short Answer: In a room of 12 people, two meet for a handshake. How many different such meetings '
+                'could take place?',
+           'a': '66'},
+          {'q': 'MATH Short Answer: If x is inversely proportional to y2 and if x = 3 when y = 4, what is the value of '
+                'x when y = 6?',
+           'a': '4/3'},
+          {'q': 'MATH Short Answer: If a equals 6 cosine theta and b equals 6 sine theta, what is the square root of '
+                'open parenthesis a2 + b2 close parenthesis?',
+           'a': '6'},
+          {'q': 'MATH Short Answer: What is the median of the set of the first 2017 even positive integers?',
+           'a': '2018'},
+          {'q': 'MATH Short Answer: How many faces does a hexagonal pyramid have?', 'a': '7'},
+          {'q': 'MATH Short Answer: Two dice are rolled. What is the probability that the results are the same or that '
+                'the sum is 8?',
+           'a': '5/18'},
+          {'q': 'MATH Short Answer: What is 4 times 3 squared?', 'a': '36'},
+          {'q': 'MATH Short Answer: Johnny is asked by his teacher to subtract 4 from a number and multiply the result '
+                'by 5.\n'
+                'Instead, he subtracts 5 and then multiplies the result by 4, giving him 168. What is the correct '
+                'answer to the teacher’s question?',
+           'a': '215'},
+          {'q': 'MATH Multiple Choice: The natural log of which of the following is irrational?\n'
+                'W) 1\n'
+                'X) √e\n'
+                'Y) e\n'
+                'Z) 10',
+           'a': 'Z'},
+          {'q': 'MATH Short Answer: If two sides of a right triangle have lengths 13 and 7, then, rounded to the '
+                'nearest whole numbers, what are the possible lengths of the third side?',
+           'a': '11 and 15'},
+          {'q': 'MATH Short Answer: What is the x-coordinate of the vertex of the parabola with equation y = 6x2 + 4x '
+                '– 7?',
+           'a': '–1/3'},
+          {'q': 'MATH Short Answer: During football season, a player catches passes for 687 yards and averages 14.6 '
+                'yards per catch, rounded to the nearest tenth. How many catches did the player make?',
+           'a': '47'},
+          {'q': 'MATH Short Answer: What is 145 squared?', 'a': '21,025'},
+          {'q': 'MATH Short Answer: For what values of x does the function f of x = the fraction with numerator x2 – '
+                '25 and denominator 3x2 – 16x + 5 have a vertical asymptote?',
+           'a': '1/3'},
+          {'q': 'MATH Short Answer: 3 is one-third percent of what number?', 'a': '900'},
+          {'q': 'MATH Short Answer: For real numbers a and b, define the binary operation “star” by a “star” b is '
+                'equal to one less than the average of a and b. What is 3 “star” open parenthesis 4 “star” 5 close '
+                'parenthesis?',
+           'a': '9/4'},
+          {'q': 'MATH Multiple Choice: A and B are statements, and B is false. Which of the following is true '
+                'regarding the statement "B implies A?"\n'
+                'W) It is true regardless of the truth value of A\n'
+                'X) It is false regardless of the truth value of A\n'
+                'Y) It is true only when A is true and false otherwise\n'
+                'Z) It is true only when A is false and false otherwise',
+           'a': 'W'},
+          {'q': 'MATH Short Answer: The line with equation y = 5x + 4 is reflected across the line y = x. What are the '
+                'slope and y-intercept of its image, respectively?',
+           'a': 'SLOPE = 1/5, y-INTERCEPT = –4/5'},
+          {'q': 'MATH Short Answer: A one-to-one function has its graph in the second quadrant. In which quadrant will '
+                'the graph of its inverse lie?',
+           'a': 'FOURTH'},
+          {'q': 'MATH Short Answer: If the line tangent to the graph of the differentiable function f of x at the '
+                'point (–2, 5) passes through the point (3.5, –3), then what is value of the derivative of f of x when '
+                'x = –2?',
+           'a': '–16/11'},
+          {'q': 'MATH Short Answer: What is 4/9 divided by 8/15?', 'a': '5/6'},
+          {'q': 'MATH Short Answer: What are the radius and the coordinates of the center of the circle with equation '
+                'x2 – 14x + y2 + 8y + 41 = 0?',
+           'a': 'RADIUS = 2√6, CENTER ='},
+          {'q': 'MATH Short Answer: Name one of the linear factors of x2 + 14x – 72.', 'a': 'x – 4 OR x + 18'},
+          {'q': 'MATH Short Answer: What is the sum of the distinct prime factors of 348?', 'a': '34'},
+          {'q': 'MATH Multiple Choice: Two coplanar circles have a common chord. Which of the following best describes '
+                'the quadrilateral that has as opposite vertices the centers of the two circles and the endpoints of '
+                'the common chord?\n'
+                'W) Kite\n'
+                'X) Parallelogram\n'
+                'Y) Rhombus\n'
+                'Z) Square',
+           'a': 'W'},
+          {'q': 'MATH Short Answer: A particle’s position x at time t is defined by the equation x of t = 2t 3 – 21t 2 '
+                '+ 60t – 36. At what time or times t is the particle at rest?',
+           'a': '2 AND 5'},
+          {'q': 'MATH Short Answer: A prism with 7 faces has how many edges?', 'a': '15'},
+          {'q': 'MATH Short Answer: Evaluate the summation, from n = 0 to infinity, of the fraction with numerator 12 '
+                'and denominator 4n.',
+           'a': '16'},
+          {'q': 'MATH Short Answer: What is the log base 3 of 243?', 'a': '5'},
+          {'q': 'MATH Short Answer: What is the integer part of the geometric mean of 6 and 80?', 'a': '21'},
+          {'q': 'MATH Short Answer: What is the slope of the line with equation 3x – 8y = –24?', 'a': '3/8'},
+          {'q': 'MATH Short Answer: A class of 16 students selects a different student of the month each month during '
+                'March,\n'
+                'April, and May. In how many different ways can the 3 honored students be selected?',
+           'a': '3360'},
+          {'q': 'MATH Multiple Choice: A differentiable function f has domain the closed interval from –3 to 4 and '
+                'range the closed interval from 5 to 12. If f prime of x is greater than 0 for all x in the domain, '
+                'what is f of –3?\n'
+                'W) –3\n'
+                'X) 4\n'
+                'Y) 5\n'
+                'Z) 12',
+           'a': 'Y'},
+          {'q': 'MATH Short Answer: How many two-digit positive integers do NOT have 5 or 6 as a digit?', 'a': '56'},
+          {'q': 'MATH Short Answer: What is the period of the function with equation y = 4 sine open parenthesis 7x + '
+                '3 close parenthesis + 2?',
+           'a': '2π/7'},
+          {'q': 'MATH Short Answer: What is the area in the first quadrant between the graphs of y = 4x and y = x3?',
+           'a': '4'},
+          {'q': 'MATH Short Answer: In what quadrants does the graph of the equation y = 4x – 3 lie?',
+           'a': '1, 3, AND 4'},
+          {'q': 'MATH Short Answer: What is the least common multiple of 14, 16, and 18?', 'a': '1008'},
+          {'q': 'MATH Short Answer: What is 62 – 26?', 'a': '–28'},
+          {'q': 'MATH Short Answer: Solve the following equation for x over the negative integers: x3 + 5x2 – 4x – 20 '
+                '= 0',
+           'a': '–2 AND –5'},
+          {'q': 'MATH Short Answer: If f is a continuous function such that the definite integral from 3 to 7 of f of '
+                'x dx equals 14, what is the average value of f on the closed interval from 3 to 7?',
+           'a': '7/2'},
+          {'q': 'MATH Short Answer: How many sides does a regular polygon have if each interior angle measures 177 '
+                'degrees?',
+           'a': '120'},
+          {'q': 'MATH Short Answer: A triangle has two sides of lengths 38 and 54. What is the largest possible '
+                'integer length of the third side?',
+           'a': '91'},
+          {'q': 'MATH Short Answer: When applying the Euclidean algorithm to find the greatest common divisor of 42 '
+                'and 157, what is the remainder after the third step?',
+           'a': '9'},
+          {'q': 'MATH Short Answer: What is the –4/3 power of –27?', 'a': '1/81'},
+          {'q': 'MATH Short Answer: What is the limit as x approaches 0 of the fraction with numerator ex – 1 and '
+                'denominator x5?',
+           'a': 'INFINITY'},
+          {'q': 'MATH Short Answer: A pyramid with 14 edges has how many vertices?', 'a': '8'},
+          {'q': 'MATH Short Answer: A plane is traveling at 380 miles per hour with respect to the Earth. The Sun’s '
+                'reflection off the plane illuminates a small area on the surface of the Earth. A passenger on the '
+                'plane observes this illuminated spot move between two houses in 12 seconds. To the nearest tenth of a '
+                'mile, how far apart are the two houses?',
+           'a': '1.3'},
+          {'q': 'MATH Short Answer: Find the value of x for which the following vectors are parallel:\n'
+                '4i − 3j and xi + 12j.',
+           'a': '–16'},
+          {'q': 'MATH Short Answer: Consider a pair of “loaded” six-sided dice. In this case, each die is weighted so '
+                'that a one is rolled one-third of the time. The other numbers are all still equally likely. What is '
+                'the probability of rolling a pair of sixes?',
+           'a': '4/225'},
+          {'q': 'MATH Short Answer: If f of x equals the cube root of open parenthesis x – 6 close parenthesis, what '
+                'is f inverse of 5?',
+           'a': '131'},
+          {'q': 'MATH Short Answer: Simplify cosine open parenthesis x – π/4 close parenthesis + sine open parenthesis '
+                'x – π/4 close parenthesis.',
+           'a': ''},
+          {'q': 'MATH Short Answer: What is the partial derivative with respect to y of the expression x5y4?',
+           'a': '4x5y3'},
+          {'q': 'MATH Short Answer: What is the units digit of 8 to the 88th power?', 'a': '6'},
+          {'q': 'MATH Short Answer: In base 7, what is 4 + 6?', 'a': 'ONE-THREE'},
+          {'q': 'MATH Short Answer: Evaluate the integral from x = –8 to 0 of the square root of open parenthesis 64 – '
+                'x2 close parenthesis dx.',
+           'a': '16π'},
+          {'q': 'MATH Short Answer: What is the area of a kite with diagonals of lengths 5 and 8?', 'a': '20'},
+          {'q': 'MATH Short Answer: If a sub one = 3 and, for n greater than one, a sub n = 2 a sub n–1 minus 1, what '
+                'is the value of a sub five?',
+           'a': '33'},
+          {'q': 'MATH Multiple Choice: The graph of a continuous function f contains the points (4, –5) and (7, –1). '
+                'The intermediate value theorem guarantees an x-value such that f of x equals which of the following?\n'
+                'W) –6\n'
+                'X) –2\n'
+                'Y) 2\n'
+                'Z) 6',
+           'a': 'X'},
+          {'q': 'MATH Short Answer: How many positive integral factors does 936 have?', 'a': '24'},
+          {'q': 'MATH Short Answer: What is the dot product of the vectors 4i – 2j + k and 3i – k?', 'a': '11'},
+          {'q': 'MATH Short Answer: An isosceles trapezoid with integer side lengths has bases of length 12 and 26. '
+                'What is the minimum length of its shortest side?',
+           'a': '8'},
+          {'q': 'MATH Short Answer: If the difference between two prime numbers is 27, what is their sum?', 'a': '31'},
+          {'q': 'MATH Short Answer: A custom mixture of nuts is composed of cashews worth $16 a pound and almonds '
+                'worth $10 a pound. May purchases 8 pounds of the mixture for $113. How many of these 8 pounds are '
+                'cashews?',
+           'a': '5.5'},
+          {'q': 'MATH Multiple Choice: Consider the polynomial equation 6x3 – 20x + 15 = 0. According to the rational '
+                'root theorem, which of the following is NOT a possible rational root of this equation?\n'
+                'W) –5\n'
+                'X) 1/3\n'
+                'Y) 1/2\n'
+                'Z) 6/5',
+           'a': 'Z'},
+          {'q': 'MATH Short Answer: If the sides of a triangle have lengths 5, 7, and 8, what is the cosine of the '
+                'largest angle?',
+           'a': '1/7'},
+          {'q': 'MATH Short Answer: If angle ABC is inscribed in a circle and measures 15 degrees, what is the degree '
+                'measure of arc ABC?',
+           'a': '330'},
+          {'q': 'MATH Short Answer: A triangular right prism has each edge of length 10. To the nearest ten, what is '
+                'its volume?',
+           'a': '430'},
+          {'q': 'MATH Short Answer: To the nearest whole number, what is the slant height of a right circular cone '
+                'with radius 6 and height 9?',
+           'a': '11'},
+          {'q': 'MATH Short Answer: How many zeros occur at the right of the number of permutations of 100 objects '
+                'taken 80 at a time?',
+           'a': '5'},
+          {'q': 'MATH Short Answer: In base 8, what is 6 times 7?', 'a': 'FIVE-TWO'},
+          {'q': 'MATH Short Answer: Rounded to the nearest integer, what is the area of a circle of circumference 15?',
+           'a': '18'},
+          {'q': 'MATH Multiple Choice: Given that the function f of x has a zero at x = 6, at what x-value must 2 + f '
+                'of x have a zero?\n'
+                'W) 3\n'
+                'X) 4\n'
+                'Y) 8\n'
+                'Z) It need not have a zero',
+           'a': 'Z'},
+          {'q': 'MATH Short Answer: What is the real quadratic polynomial with least possible positive integer leading '
+                'coefficient that has 7 – 8i as a zero?',
+           'a': 'x2 – 14x + 113'},
+          {'q': 'MATH Short Answer: What is the greatest integer that is less than or equal to the log base 6 of 975?',
+           'a': '3'},
+          {'q': 'MATH Short Answer: To the nearest degree, what is the measure of each interior angle of a regular '
+                '65-sided polygon?',
+           'a': '174'},
+          {'q': 'MATH Short Answer: If the definite integral from 1 to 6 of f of x dx = 21, then what is the definite '
+                'integral from 1 to 6 of open parenthesis f of x minus 3 close parenthesis dx?',
+           'a': '6'},
+          {'q': 'MATH Short Answer: What is the sum of the squares of the first 20 positive integers?', 'a': '2870'},
+          {'q': 'MATH Short Answer: The point (5, 6) is reflected across the y-axis and the resulting point is then '
+                'translated 4 units down. What are the coordinates of the final image point?',
+           'a': ''},
+          {'q': 'MATH Short Answer: At what x-value does the maximum value of the function f of x = 2x3 – 3x2 – 12x – '
+                '6 occur on the closed interval from –4 to 4?',
+           'a': '4'},
+          {'q': 'MATH Short Answer: Given f inverse of x equals 2 – x, what is f(x)?', 'a': '2 – x'},
+          {'q': 'MATH Short Answer: A triangle with integer side lengths has longest side that is 4 times as long as a '
+                'second side, and the third side has length 20. What is the greatest possible perimeter of the '
+                'triangle?',
+           'a': '50'},
+          {'q': 'MATH Short Answer: Consider a bag of 7 marbles, 5 red and 2 white. You draw marbles from the bag '
+                'until you draw the last white marble, at which point you stop. What is the probability you stop '
+                'drawing after the second marble is selected?',
+           'a': '1/21'},
+          {'q': 'MATH Short Answer: For the arithmetic sequence with first term 7 and fourth term 19, what is the sum '
+                'of the first\n'
+                '50 terms?',
+           'a': '5250'},
+          {'q': 'MATH Short Answer: What is the absolute value of the complex conjugate of –4 + 5i?', 'a': '√41'},
+          {'q': 'MATH Short Answer: What is the limit as x approaches 3 of the fraction with numerator x6 – 81 and '
+                'denominator x3 – 9?',
+           'a': '36'},
+          {'q': 'MATH Short Answer: An octagon is dilated with scale factor 7/4. What is the ratio of the areas of the '
+                'original octagon to the image?',
+           'a': '16/49'},
+          {'q': 'MATH Short Answer: Other than 2, what is the smallest positive integer that, when divided by 3, 5, 7, '
+                'or 9, has a remainder of 2?',
+           'a': '317'},
+          {'q': 'MATH Short Answer: If 6 dice are rolled and the numbers on the top faces are added together, how many '
+                'different sums are possible?',
+           'a': '31'},
+          {'q': 'MATH Short Answer: What is the largest prime factor of the quantity\n42014 + 42015 + 42016 + 42017?',
+           'a': '17'},
+          {'q': 'MATH Short Answer: In the integers mod 12, what is 5 times 8?', 'a': '4'},
+          {'q': 'MATH Short Answer: f of x is a twice differentiable function such that f prime of x and f double '
+                'prime of x are both less than 0 for all real numbers. If f of 3 equals 12 and f of 5 equals 8, what '
+                'is the largest possible integer value for f of 7?',
+           'a': '3'},
+          {'q': 'MATH Short Answer: What is the volume of a circular cylinder formed by rotating a 5 by 6 rectangular '
+                'region about one of its shorter sides?',
+           'a': '180π'},
+          {'q': 'MATH Short Answer: The sums of three whole numbers taken in pairs are 11, 13, and 14. What is the '
+                'product of these three numbers?',
+           'a': '240'},
+          {'q': 'MATH Short Answer: If exactly 10 diagonals of a particular convex polygon contain the same vertex, '
+                'how many total sides does the polygon have?',
+           'a': '13'},
+          {'q': 'MATH Short Answer: In a particular year, if April 15 is on a Wednesday, on what day of the week is '
+                'December 25?',
+           'a': 'FRIDAY'},
+          {'q': 'MATH Short Answer: What is the distance from the point (1, 3, 5) to the origin?', 'a': '√35'},
+          {'q': 'MATH Short Answer: Consider an infinite geometric series with sum equal to 8/3 and first term 7/5. '
+                'What is the value of the common ratio r for this series?',
+           'a': '19/40'},
+          {'q': 'MATH Short Answer: In a triple-elimination tournament, each game is played by two teams, there are no '
+                'ties, and teams are eliminated when they have lost 3 times. What is the maximum number of games '
+                'played if 83 teams enter?',
+           'a': '248'},
+          {'q': 'MATH Short Answer: What is the remainder when x6 + 3x4 – 2x3 + 7x – 3 is divided by x + 2?',
+           'a': '111'},
+          {'q': 'MATH Short Answer: The line with equation y = –2x + 5 is reflected across the y-axis. What is the '
+                'slope-intercept equation of its image?',
+           'a': 'y = 2x + 5'},
+          {'q': 'MATH Short Answer: Triangle ABC has all angles with integral degree measures and the measure of angle '
+                'A equals\n'
+                '5 times the measure of angle B. How many possible degree measures are there for angle C?',
+           'a': '29'},
+          {'q': 'MATH Short Answer: Using the point names A, B, C, D, and E, how many different names are there for '
+                'pentagon\n'
+                'ABCDE?',
+           'a': '10'},
+          {'q': 'MATH Short Answer: What is the greatest common divisor of 234 and 2826?', 'a': '18'},
+          {'q': 'MATH Short Answer: Consider a triangle with two sides with lengths of 4 and 9. How many different '
+                'integers could be the length of the third side?',
+           'a': '7'},
+          {'q': 'MATH Short Answer: What is the limit as x approaches 0 of the fraction with numerator x – 1 + e to '
+                'the power 3x and denominator sine x?',
+           'a': '4'},
+          {'q': 'MATH Short Answer: Evaluate the following expression: –i 33.', 'a': '–i'},
+          {'q': 'MATH Short Answer: A triangular right prism has each edge of length 4. What is its surface area?',
+           'a': '48 + 8√3'},
+          {'q': 'MATH Short Answer: A set of test scores is normally distributed with mean 72 and standard deviation '
+                '6. What score corresponds to a Z-score of –1.5?',
+           'a': '63'},
+          {'q': 'MATH Short Answer: A 5-digit palindrome has 3 different digits and is divisible by 18. What is its '
+                'largest possible value?',
+           'a': '89,298'},
+          {'q': 'MATH Short Answer: What base-10 numeral does the following Roman numeral represent: CMXLVI?',
+           'a': '946'},
+          {'q': 'MATH Short Answer: What is the following cross product of vectors: 5i – 3j + k cross 4j?',
+           'a': '–4i + 20k'}],
  'ess': [{'q': 'EARTH AND SPACE Multiple Choice: What layer of the Earth’s atmosphere contains approximately 75% of '
                'its air mass?\n'
                'W) Troposphere\n'
@@ -3583,7 +6014,592 @@ questions = {'phy': [{'q': 'PHYSICS Short Answer: Planck was able to describe th
                'X) Alluvial fan\n'
                'Y) Deep ocean trench\n'
                'Z) River delta',
-          'a': 'X'}]}
+          'a': 'X'}, {'q': 'EARTH AND SPACE Multiple Choice: Which of the following earthquake waves travels the slowest?\n'
+               'W) Body\n'
+               'X) Primary\n'
+               'Y) Secondary\n'
+               'Z) Rayleigh',
+          'a': 'Z'},
+         {'q': 'EARTH AND SPACE Short Answer: What is the largest shield volcano in our Solar System?',
+          'a': 'OLYMPUS MONS'},
+         {'q': 'EARTH AND SPACE Multiple Choice: What type of mineral composes the green sand beaches that are found '
+               'in the state of Hawaii?\n'
+               'W) Malachite\n'
+               'X) Augite\n'
+               'Y) Jade\n'
+               'Z) Olivine',
+          'a': 'Z'},
+         {'q': 'EARTH AND SPACE Short Answer: A star has a parallax of 0.4 arcseconds. To the nearest whole light '
+               'year, how far away is the star?',
+          'a': '8'},
+         {'q': 'EARTH AND SPACE Multiple Choice: Which of the following is NOT true regarding white dwarfs?\n'
+               'W) They shrink in radius as they get cooler\n'
+               'X) They do not perform nuclear fusion\n'
+               'Y) Their mass is mostly composed of carbon and oxygen\n'
+               'Z) They can have atmospheres of helium',
+          'a': 'W'},
+         {'q': 'EARTH AND SPACE Multiple Choice: The Herschels proposed a model of the Milky Way that suggested that '
+               'our solar system was near the center. Which of the following did they not account for in their model?\n'
+               "W) The Sun's brightness only enables us to see a limited distance into the Milky Way\n"
+               'X) Their telescopes were not powerful enough to see the edge of the Milky Way\n'
+               'Y) Interstellar dust obscures much of the Milky Way from our vantage point\n'
+               'Z) Their sampling of stars was biased in one direction',
+          'a': 'Y'},
+         {'q': 'EARTH AND SPACE Short Answer: What is the term, literally meaning “burning cloud”, for a glowing '
+               'pyroclastic flow that can reach speeds of 200 kilometers per hour?',
+          'a': 'NUEE ARDENTE'},
+         {'q': 'EARTH AND SPACE Multiple Choice: What type of mass wasting event is created when many different '
+               'sediment sizes channelize and begin to move in a fluidized mass down slope?\n'
+               'W) Debris flow\n'
+               'X) Rock avalanche\n'
+               'Y) Earth flow\n'
+               'Z) Debris slide',
+          'a': 'W'},
+         {'q': 'EARTH AND SPACE Multiple Choice: What type of metamorphism occurs when magma is injected into crustal '
+               'rock and the heat of the intrusion causes the crustal rock to metamorphose?\n'
+               'W) Contact\n'
+               'X) Regional\n'
+               'Y) Burial\n'
+               'Z) Hydrothermal',
+          'a': 'W'},
+         {'q': 'EARTH AND SPACE Short Answer: The volume of Lake Michigan is 5 times 10 to the 12 cubic meters. If the '
+               'flow rate of water into Lake Michigan is 5 times 10 to the 10 cubic meters per year, how long, in '
+               'years to one significant digit, is the residence time of water in lake Michigan?',
+          'a': '100'},
+         {'q': 'EARTH AND SPACE Multiple Choice: Which of the following minerals is not a carbonate?\n'
+               'W) Rhodochrosite\n'
+               'X) Fluorite\n'
+               'Y) Azurite\n'
+               'Z) Calcite',
+          'a': 'X'},
+         {'q': 'EARTH AND SPACE Short Answer: A star has five times the radius of the Sun, and the temperature in '
+               'kelvins of its surface is twice that of the Sun. How many times as luminous as the Sun is it?',
+          'a': '400'},
+         {'q': 'EARTH AND SPACE Multiple Choice: Which of the following materials would make the best aquitard?\n'
+               'W) Sand\n'
+               'X) Limestone\n'
+               'Y) Clay\n'
+               'Z) Gravel',
+          'a': 'Y'},
+         {'q': 'EARTH AND SPACE Multiple Choice: Which of the following statements is NOT true regarding neutron '
+               'stars?\n'
+               'W) They are supported by electron degeneracy pressure\n'
+               'X) Pulsars are thought to be a type of neutron star\n'
+               'Y) After initial neutrino burn-off, neutron stars cool slowly due to their small surface area\n'
+               'Z) The center of the Crab Nebula is a neutron star',
+          'a': 'W'},
+         {'q': 'EARTH AND SPACE Short Answer: Which of the four terrestrial planets is most unlike the others in '
+               'density?',
+          'a': 'MARS'},
+         {'q': 'EARTH AND SPACE Multiple Choice: What phenomenon is believed to be the main driver in the accelerated '
+               'expansion of the universe?\n'
+               'W) Dark matter\n'
+               'X) Black hole evaporation\n'
+               'Y) Dark energy\n'
+               'Z) Quantum gravity',
+          'a': 'Y'},
+         {'q': 'EARTH AND SPACE Multiple Choice: What type of earthquake wave is associated with ground roll?\n'
+               'W) Love wave\n'
+               'X) P-wave\n'
+               'Y) Rayleigh wave\n'
+               'Z) S-wave',
+          'a': 'Y'},
+         {'q': 'EARTH AND SPACE Short Answer: Galena is an ore of what element?', 'a': 'LEAD'},
+         {'q': 'EARTH AND SPACE Multiple Choice: What is found in clouds that can acquire opposite charges, creating '
+               'the potential for lightning?\n'
+               'W) Entrained mist\n'
+               'X) Liquid water\n'
+               'Y) Dust grains\n'
+               'Z) Ice crystals',
+          'a': 'Z'},
+         {'q': 'EARTH AND SPACE Short Answer: With what type of plate boundary is the Mariana Trench associated?',
+          'a': 'CONVERGENT'},
+         {'q': 'EARTH AND SPACE Multiple Choice: In what cloud type does hail generally form?\n'
+               'W) Cirrocumulus\n'
+               'X) Cirrostratus\n'
+               'Y) Altocumulus\n'
+               'Z) Cumulonimbus',
+          'a': 'Z'},
+         {'q': 'EARTH AND SPACE Multiple Choice: You find a chunk of granite that you conclude, via radiometric '
+               'dating, is 3.2 billion years old. The granite also contains inclusions of quartzite. Which of the '
+               'following is a reasonable conclusion based on this data?\n'
+               'W) The quartzite likely formed less than 3.2 billion years ago\n'
+               'X) Because the quartzite is contained in the granite, it also formed 3.2 billion years ago\n'
+               'Y) The quartzite likely formed more than 3.2 billion years ago\n'
+               'Z) The sandstone from which the quartzite came is likely older than 3.2 billion years, but the '
+               'quartzite itself is younger than that',
+          'a': 'Y'},
+         {'q': 'EARTH AND SPACE Short Answer: What causes the trees in Alaskan forests to start tilting in many '
+               'different directions, creating an area called a drunken forest?',
+          'a': 'THAWING SOIL'},
+         {'q': 'EARTH AND SPACE Multiple Choice: What type of faulting is defined by strike-slip offset along an '
+               'essentially vertical fault plane?\n'
+               'W) Normal\n'
+               'X) Reverse\n'
+               'Y) Thrust\n'
+               'Z) Transcurrent',
+          'a': 'Z'},
+         {'q': 'EARTH AND SPACE Multiple Choice: What type of fault created the Loma Prieta earthquake in 1989?\n'
+               'W) Normal\n'
+               'X) Reverse\n'
+               'Y) Strike-slip\n'
+               'Z) Thrust',
+          'a': 'Y'},
+         {'q': 'EARTH AND SPACE Short Answer: What is the parent rock of slate?', 'a': 'SHALE'},
+         {'q': 'EARTH AND SPACE Multiple Choice: What type of rock is found in most cave systems?\n'
+               'W) Sandstone\n'
+               'X) Granite\n'
+               'Y) Basalt\n'
+               'Z) Limestone',
+          'a': 'Z'},
+         {'q': 'EARTH AND SPACE Short Answer: According to the Richter scale, to the nearest whole number, how many '
+               'times as much energy does a 5.7 earthquake release as a 4.7 earthquake?',
+          'a': '32'},
+         {'q': 'EARTH AND SPACE Multiple Choice: What is the name for a stream that is similar to a braided stream but '
+               'the mid- channel bars are much more stable than those found in a braided stream?\n'
+               'W) Meandering\n'
+               'X) Wandering\n'
+               'Y) Anastomosing\n'
+               'Z) Sinuous',
+          'a': 'Y'},
+         {'q': 'EARTH AND SPACE Multiple Choice: Which of the following types of olivine has the highest iron '
+               'content?\n'
+               'W) Forsterite\n'
+               'X) Fayalite\n'
+               'Y) Monticellite\n'
+               'Z) Tephroite',
+          'a': 'X'},
+         {'q': 'EARTH AND SPACE Short Answer: What is the general term for the data-gathering technique by which the '
+               'measurements of several smaller telescopes are superimposed to create a higher-resolution and more '
+               'detailed image?',
+          'a': 'INTERFEROMETRY'},
+         {'q': 'EARTH AND SPACE Short Answer: Fossils of Mesosaurus were instrumental in providing evidence for what '
+               'theory?',
+          'a': 'CONTINENTAL DRIFT'},
+         {'q': 'EARTH AND SPACE Multiple Choice: What is the term for a fluidized mixture of solid to semi-solid '
+               'fragments and hot expanding gases that flows under gravity down the flanks of a volcano during an '
+               'eruption?\n'
+               'W) Pyroclastic surge\n'
+               'X) Lahar\n'
+               'Y) Pyroclastic flow\n'
+               'Z) Lava flow',
+          'a': 'Y'},
+         {'q': 'EARTH AND SPACE Short Answer: Identify all of the following three locations where continental ice '
+               'sheets can be currently found: 1) Greenland; 2) North America; 3) Antarctica.',
+          'a': '1 AND 3'},
+         {'q': 'EARTH AND SPACE Multiple Choice: The La Brea Tar Pits of Los Angeles, California, are famous for the '
+               'quantity and diversity of fossils of extinct Pleistocene animals. Which of the following is closest to '
+               'the number of years ago that these pits formed?\n'
+               'W) 40,000\n'
+               'X) 400,000\n'
+               'Y) 4,000,000\n'
+               'Z) 40,000,000',
+          'a': 'W'},
+         {'q': 'EARTH AND SPACE Short Answer: Identify all of the following three statements that are true regarding '
+               'the waves produced by earthquakes: 1) S waves are transverse waves; 2) S waves only travel through '
+               'solids; 3) S waves travel faster than P waves.',
+          'a': '1 AND 2'},
+         {'q': 'EARTH AND SPACE Multiple Choice: Greenhouse gases build up in the atmosphere of Earth and limit the '
+               'amount of heat escaping back into space. Which of the following is not a greenhouse gas for Earth?\n'
+               'W) Carbon dioxide\n'
+               'X) Argon\n'
+               'Y) Nitrous oxide\n'
+               'Z) Methane',
+          'a': 'X'},
+         {'q': 'EARTH AND SPACE Multiple Choice: What coordinate is the celestial-sphere equivalent of latitude?\n'
+               'W) Declination\n'
+               'X) Right-ascension\n'
+               'Y) Altitude\n'
+               'Z) Zenith angle',
+          'a': 'W'},
+         {'q': 'EARTH AND SPACE Short Answer: What type of tide is caused when the gravitational forces of the Sun and '
+               'Moon coincide?',
+          'a': 'SPRING TIDES'},
+         {'q': "EARTH AND SPACE Short Answer: Pahoehoe and a'a are lava flows associated with what type of magma?",
+          'a': 'BASALTIC'},
+         {'q': 'EARTH AND SPACE Multiple Choice: The earliest known single-celled life forms on Earth belong to which '
+               'of the following taxonomic groups?\n'
+               'W) Fungi\n'
+               'X) Protoctista\n'
+               'Y) Plantae\n'
+               'Z) Monera',
+          'a': 'Z'},
+         {'q': 'EARTH AND SPACE Short Answer: What is the chief commercial ore of aluminum?', 'a': 'BAUXITE'},
+         {'q': 'EARTH AND SPACE Short Answer: Most long-period comets are thought to originate from what region in the '
+               'solar system?',
+          'a': 'OORT CLOUD'},
+         {'q': 'EARTH AND SPACE Short Answer: In 1943, a volcano suddenly appeared in a corn field in the village of '
+               'Paricutin and began erupting lava bombs and ash. What type of volcano was this?',
+          'a': 'CINDER CONE'},
+         {'q': 'EARTH AND SPACE Multiple Choice: We see the same side of the moon here on Earth all the time due to '
+               'what effect?\n'
+               'W) Lagrange point\n'
+               'X) Gravitational lensing\n'
+               'Y) Tidal locking\n'
+               'Z) Asynchronous spin',
+          'a': 'Y'},
+         {'q': "EARTH AND SPACE Multiple Choice: What layer of the Earth's atmosphere varies in depth with the time of "
+               'day and reflects radio waves long distances?\n'
+               'W) Photosphere\n'
+               'X) Stratosphere\n'
+               'Y) Troposphere\n'
+               'Z) Ionosphere',
+          'a': 'Z'},
+         {'q': 'EARTH AND SPACE Short Answer: What is the second brightest star in the night sky?', 'a': 'CANOPUS'},
+         {'q': 'EARTH AND SPACE Short Answer: What famous lake was formed as a result of the collapse of Mount Mazama?',
+          'a': 'CRATER LAKE'},
+         {'q': 'EARTH AND SPACE Short Answer: What term, combining the Greek words for blanket and rock, describes the '
+               'loose, incoherent material of any origin on the surface of a planet or satellite?',
+          'a': 'REGOLITH'},
+         {'q': 'EARTH AND SPACE Multiple Choice: A barchan dune developes perpendicular to a moderate-velocity, '
+               'uniform wind.\n'
+               'Which of the following dunes is developed by variable wind direction?\n'
+               'W) Star\n'
+               'X) Longitudinal\n'
+               'Y) Seif\n'
+               'Z) Dome',
+          'a': 'W'},
+         {'q': 'EARTH AND SPACE Short Answer: After the first 4 billion years of Earth’s history, what relatively '
+               'short evolutionary event brought forth most major animal phyla, as evidenced in the fossil record?',
+          'a': 'CAMBRIAN EXPLOSION'},
+         {'q': 'EARTH AND SPACE Short Answer: Land that has been frozen for at least two years, including rock or '
+               'soil, has what classification?',
+          'a': 'PERMAFROST'},
+         {'q': 'EARTH AND SPACE Short Answer: List the following four minerals in order of increasing metamorphic '
+               'grade:\n'
+               '1) Staurolite; 2) Muscovite; 3) Garnet; 4) Chlorite.',
+          'a': '4, 2, 3, 1'},
+         {'q': 'EARTH AND SPACE Short Answer: Radiometric dating of natural materials is mainly limited by what '
+               'property unique to the radionuclide of interest for the specific time scale?',
+          'a': 'HALF LIFE'},
+         {'q': 'EARTH AND SPACE Short Answer: What type of supernova can leave behind a black hole?', 'a': 'TYPE II'},
+         {'q': 'EARTH AND SPACE Short Answer: What is the term for the minimum distance from a planet at which a '
+               'satellite can remain intact, without being torn apart by gravitational forces?',
+          'a': 'ROCHE LIMIT'},
+         {'q': 'EARTH AND SPACE Short Answer: What is the name for the air-lifting process that forces an air mass up '
+               'and over a mountain or upland, causing the moisture to rain out on the windward slope and leaving a '
+               'rainshadow effect on the leeward slope?',
+          'a': 'OROGRAPHIC LIFTING'},
+         {'q': 'EARTH AND SPACE Multiple Choice: The Moon always turns the same face toward the Earth, yet small '
+               'variations in the visibility of its features appear to take place, such that it appears to rock slowly '
+               'backward and forward. What effect accounts for this observed behavior?\n'
+               'W) Transient phenomena\n'
+               'X) Libration\n'
+               'Y) Moonset\n'
+               'Z) Earthshine',
+          'a': 'X'},
+         {'q': 'EARTH AND SPACE Short Answer: The leading edge of the bowl of the Big Dipper, from bottom to top, '
+               'points to what important aid to celestial navigation?',
+          'a': 'POLARIS'},
+         {'q': 'EARTH AND SPACE Multiple Choice: Tombolos are associated with which of the following?\n'
+               'W) Undersea vents\n'
+               'X) Islands\n'
+               'Y) Volcanoes\n'
+               'Z) Wind patterns',
+          'a': 'X'},
+         {'q': 'EARTH AND SPACE Multiple Choice: Which of the following is closest to the percentage of the ocean area '
+               'that is represented by continental shelves?\n'
+               'W) 10\n'
+               'X) 20\n'
+               'Y) 30\n'
+               'Z) 40',
+          'a': 'W'},
+         {'q': 'EARTH AND SPACE Short Answer: What is the name for the circular ocean currents that pinch off from '
+               'ocean currents in sections, causing drastic changes in sound velocity at the interface?',
+          'a': 'EDDIES'},
+         {'q': 'EARTH AND SPACE Short Answer: In what constellation can the Crab Nebula be found?', 'a': 'TAURUS'},
+         {'q': 'EARTH AND SPACE Short Answer: What is the name for a front that is formed when a cold front overtakes '
+               'a warm front and warm air is separated from the cyclonic center?',
+          'a': 'OCCLUDED FRONT'},
+         {'q': 'EARTH AND SPACE Multiple Choice: The Black Hills of South Dakota is a large dome that has been exposed '
+               'due to upwarping followed by erosion. Which of the following rocks would we expect to find in the '
+               'innermost core of the Black\n'
+               'Hills?\n'
+               'W) Shale\n'
+               'X) Gypsum\n'
+               'Y) Pegmatite\n'
+               'Z) Limestone',
+          'a': 'Y'},
+         {'q': 'EARTH AND SPACE Short Answer: How many times greater, in terms of energy, is a magnitude 6 earthquake '
+               'than a magnitude 4 earthquake?',
+          'a': '961'},
+         {'q': 'EARTH AND SPACE Multiple Choice: The Global Positioning System consists of several operational '
+               'satellites in spatially separated orbits around the earth. How many different satellite signals are '
+               'required for accurate position, velocity, and time data?\n'
+               'W) 2\n'
+               'X) 3\n'
+               'Y) 4\n'
+               'Z) 6',
+          'a': 'Y'},
+         {'q': 'EARTH AND SPACE Multiple Choice: Kepler’s second law states that in any given period of time, a planet '
+               'will have what orbital property stay constant?\n'
+               'W) Distance traveled\n'
+               'X) Angular distance traveled\n'
+               'Y) Area swept\n'
+               'Z) Number of rotations',
+          'a': 'Y'},
+         {'q': 'EARTH AND SPACE Multiple Choice: What arises in space, thought to be from particle pairs that blink '
+               'into existence and promptly annihilate?\n'
+               'W) Gravitational potential energy\n'
+               'X) Vacuum energy\n'
+               'Y) Cherenkov radiation\n'
+               'Z) Bremsstrahlung radiation',
+          'a': 'X'},
+         {'q': 'EARTH AND SPACE Short Answer: What type of stellar object lies fully within its own Schwarschild '
+               'radius?',
+          'a': 'BLACK HOLE'},
+         {'q': 'EARTH AND SPACE Multiple Choice: Ganymede is more massive than Titan, but only Titan has an '
+               'atmosphere.\n'
+               'Which of the following correctly explains this?\n'
+               "W) Titan's atmosphere is mostly made of heavy gases, like sulfur dioxide, which cannot escape its "
+               'gravitational pull\n'
+               'X) Titan is significantly colder than Ganymede, preventing its atmosphere from escaping\n'
+               'Y) Titan actively replenishes its atmosphere, while Ganymede does not\n'
+               'Z) Titan absorbs atmospheric gases from Saturn, while Ganymede does not absorb gases from Jupiter',
+          'a': 'X'},
+         {'q': 'EARTH AND SPACE Multiple Choice: The eruption of El Chicon had a greater effect on global temperatures '
+               'than the eruption of Mount Saint Helens despite being a smaller eruption. Which of the following best '
+               'explains why?\n'
+               'W) El Chicon emitted much more sulfur dioxide\n'
+               'X) El Chicon deposited more heavy ash\n'
+               'Y) El Chicon was located more centrally in the hemisphere\n'
+               'Z) El Chicon was a more prolonged eruption',
+          'a': 'W'},
+         {'q': 'EARTH AND SPACE Multiple Choice: At which of the following locations on the HR diagram would one find\n'
+               'Betelgeuse?\n'
+               'W) Top right\n'
+               'X) Top left\n'
+               'Y) Bottom right\n'
+               'Z) Bottom left',
+          'a': 'W'},
+         {'q': 'EARTH AND SPACE Short Answer: What are the two main non-oxygen elements in coal combustion products '
+               'that are responsible for acid rain?',
+          'a': 'NITROGEN AND SULFUR'},
+         {'q': 'EARTH AND SPACE Multiple Choice: Much of the information we have about the center of the Milky Way was '
+               'collected in the radio wavelengths of the electromagnetic spectrum. Which of the following telescopes '
+               'could be used to make these images?\n'
+               'W) Hubble Space Telescope\n'
+               'X) Keck Observatory\n'
+               'Y) Chandra Observatory\n'
+               'Z) Very Large Array',
+          'a': 'Z'},
+         {'q': 'EARTH AND SPACE Short Answer: Ground astronomy must be conducted in wavelengths of light that can pass '
+               'through\n'
+               'Earth’s atmosphere. Aside from visible light, to what other form of electromagnetic radiation is our '
+               'atmosphere mostly transparent?',
+          'a': 'RADIO'},
+         {'q': 'EARTH AND SPACE Multiple Choice: Which variable affecting the speed of sound in the ocean dominates at '
+               'very large depths?\n'
+               'W) Water Pressure\n'
+               'X) Salinity\n'
+               'Y) Temperature\n'
+               'Z) Biologic density',
+          'a': 'W'},
+         {'q': 'EARTH AND SPACE Short Answer: Plutinos are Kuiper belt objects whose orbits are locked in a 3-to-2 '
+               'resonance with what planet?',
+          'a': 'NEPTUNE'},
+         {'q': "EARTH AND SPACE Multiple Choice: A necessary conclusion of Hubble's law is that very-distant galaxies "
+               'are moving away from us at speeds faster than the speed of light. Which of the following correctly '
+               'explains this observation?\n'
+               "W) Hubble's law becomes non-linear for very large distances\n"
+               'X) The Hubble constant was originally miscalculated\n'
+               'Y) Due to the metric expansion of space, faraway objects can recede from us faster than the speed of '
+               'light\n'
+               'Z) The proper distance to faraway galaxies does not scale linearly with the Hubble constant',
+          'a': 'Y'},
+         {'q': 'EARTH AND SPACE Multiple Choice: Cosmologists have recently reembraced the cosmological constant as a '
+               'quantity in the Einstein field equations. Which of the following could be a physical explanation for '
+               'the cosmological constant?\n'
+               'W) Vacuum energy\n'
+               'X) Morse energy\n'
+               'Y) Cosmic microwave background\n'
+               'Z) Dark matter',
+          'a': 'W'},
+         {'q': 'EARTH AND SPACE Multiple Choice: What type of feature is the Moon’s Rupes Recta?\n'
+               'W) Fault\n'
+               'X) Ridge\n'
+               'Y) Bay\n'
+               'Z) Valley',
+          'a': 'W'},
+         {'q': 'EARTH AND SPACE Multiple Choice: When corals bleach due to warming seas they expel what symbiotic '
+               'organisms, leaving them vulnerable to starvation and disease?\n'
+               'W) Chlorella\n'
+               'X) Diatoms\n'
+               'Y) Zooxanthellae\n'
+               'Z) Spirogyra',
+          'a': 'Y'},
+         {'q': 'EARTH AND SPACE Multiple Choice: Which of these is true regarding the Sargasso sea?\n'
+               'W) It has relatively low biological productivity\n'
+               'X) It is adjacent to the Bay of Bengal\n'
+               'Y) It is primarily a hypoxic dead zone\n'
+               'Z) It has the saltiest ocean water',
+          'a': 'W'},
+         {'q': 'EARTH AND SPACE Short Answer: Rank the following three stars in order of increasing surface '
+               'temperature:\n'
+               '1) Arcturus; 2) Betelgeuse; 3) The Sun.',
+          'a': '2, 1, 3'},
+         {'q': "EARTH AND SPACE Multiple Choice: Which of the following is closest to the percentage of the Earth's "
+               'total surface water contained in ice caps, glaciers, and permanent snow?\n'
+               'W) 2\n'
+               'X) 13\n'
+               'Y) 25\n'
+               'Z) 45',
+          'a': 'W'},
+         {'q': 'EARTH AND SPACE Multiple Choice: The orbital period of Pluto is 248 years. For what percentage of '
+               "Pluto's orbital period is it closer to the Sun than Neptune is?\n"
+               'W) 8\n'
+               'X) 24\n'
+               'Y) 37\n'
+               'Z) 48',
+          'a': 'W'},
+         {'q': 'EARTH AND SPACE Short Answer: What is the general term for the formation of mountains?',
+          'a': 'OROGENY'},
+         {'q': 'EARTH AND SPACE Short Answer: What soil horizon is composed primarily of decaying organic matter?',
+          'a': 'O HORIZON'},
+         {'q': 'EARTH AND SPACE Multiple Choice: What radioactive element was produced during nuclear-weapons testing '
+               'in the mid 1900s and is commonly used by oceanographers to date the age of water masses, but will '
+               'decay to normal background levels in the coming decades.\n'
+               'W) Carbon-14\n'
+               'X) Radon-222\n'
+               'Y) Uranium-238\n'
+               'Z) Tritium',
+          'a': 'Z'},
+         {'q': 'EARTH AND SPACE Multiple Choice: The key glacier structure formed through annual layering of ice '
+               'through cycles of melting and snowfall is called what?\n'
+               'W) Ogives\n'
+               'X) Primary stratification\n'
+               'Y) Longitudinal foliation\n'
+               'Z) Transverse crevasses',
+          'a': 'X'},
+         {'q': "EARTH AND SPACE Multiple Choice: Kepler's third law of planetary motion relates what two parameters of "
+               'the orbiting body?\n'
+               'W) Solar radiation and distance\n'
+               'X) Orbital period and semi-major axis\n'
+               'Y) Orbital eccentricity and solar mass\n'
+               'Z) Solar mass and mass of orbiting body',
+          'a': 'X'},
+         {'q': 'EARTH AND SPACE Multiple Choice: Magnetite, pyrite, and galena are mineral examples of which of the '
+               'following crystal system types?\n'
+               'W) Tetragonal\n'
+               'X) Cubic\n'
+               'Y) Triclinic\n'
+               'Z) Ortho-rhombic',
+          'a': 'X'},
+         {'q': 'EARTH AND SPACE Short Answer: How many planes of cleavage does biotite possess?', 'a': 'ONE'},
+         {'q': 'EARTH AND SPACE Short Answer: Water-saturated surfaces can behave like liquids during earthquakes. '
+               'What is the term for this phenomenon?',
+          'a': 'LIQUEFACTION'},
+         {'q': 'EARTH AND SPACE Multiple Choice: Which of the following is not a unit used by oceanographers to '
+               'describe sea water salinity?\n'
+               'W) Parts per thousand\n'
+               'X) Siemen\n'
+               'Y) Practical salinity unit\n'
+               'Z) Grams per kilogram',
+          'a': 'X'},
+         {'q': 'EARTH AND SPACE Short Answer: Prometheus and Pan both create gaps in Saturn’s rings due to their '
+               'gravitational influence. What is the term for this type of satellite?',
+          'a': 'SHEPHERD'},
+         {'q': 'EARTH AND SPACE Short Answer: The greenhouse effect on Venus is primarily attributed to what gas?',
+          'a': 'CARBON DIOXIDE'},
+         {'q': 'EARTH AND SPACE Short Answer: To the nearest power of ten, how many times as intense is the light we '
+               'receive from a star with apparent magnitude negative 1 as that of another star with apparent magnitude '
+               '4?',
+          'a': '100'},
+         {'q': 'EARTH AND SPACE Short Answer: According to the Stefan-Boltzmann law, a star with surface temperature '
+               'in kelvins that is three times that of the Sun would emit how many times as much energy as the Sun?',
+          'a': '81'},
+         {'q': "EARTH AND SPACE Short Answer: The closed universe is a solution of Einstein's equations of general "
+               'relativity in which the mass density of the Universe exceeds what parameter?',
+          'a': 'CRITICAL DENSITY'},
+         {'q': 'EARTH AND SPACE Short Answer: Identify all of the following three statements that are true of the '
+               'inner planets:\n'
+               '1) Mercury has an atmosphere of primarily methane; 2) All of the inner planets revolve in the same '
+               'direction around the sun; 3) All of the inner planets rotate in the same direction around their axes.',
+          'a': '2'},
+         {'q': 'EARTH AND SPACE Multiple Choice: Which of the following is most directly responsible for ocean water '
+               'downwelling in the mid-ocean gyres?\n'
+               'W) Ekman transport\n'
+               'X) High surface water density\n'
+               'Y) High organic carbon content\n'
+               'Z) Sea floor spreading',
+          'a': 'W'},
+         {'q': 'EARTH AND SPACE Short Answer: What type of extrusive igneous rock is considered intermediate between '
+               'basalt and dacite and possesses approximately 60% silica content?',
+          'a': 'ANDESITE'},
+         {'q': 'EARTH AND SPACE Multiple Choice: What ocean water mass has the oldest carbon-14 age, meaning it has '
+               'spent the most time isolated from the atmosphere?\n'
+               'W) North Atlantic Deep Water\n'
+               'X) Antarctic Bottom Water\n'
+               'Y) North Pacific Deep Water\n'
+               'Z) Circumpolar Deep Water',
+          'a': 'Y'},
+         {'q': 'EARTH AND SPACE Short Answer: Multiple Choic Saturn’s rings are mostly composed of which of the '
+               'following materials?\n'
+               'W) Ice\n'
+               'X) Silicates\n'
+               'Y) Carbonates\n'
+               'Z) Iron',
+          'a': 'W) ICE'},
+         {'q': 'EARTH AND SPACE Short Answer: The flattening of a protostellar disk in new stars is primarily due to '
+               'the conservation of what physical quantity?',
+          'a': 'ANGULAR MOMENTUM'},
+         {'q': 'EARTH AND SPACE Short Answer: What is the term for the flame-like jets of gas that can be seen at the '
+               'edge of the\n'
+               "Sun's disk extending into the chromosphere, dissipating after 5 to 15 minutes?",
+          'a': 'SPICULES'},
+         {'q': 'EARTH AND SPACE Short Answer: The reciprocal of the age of the universe, when converted to kilometers '
+               'per second per Megaparsec, approximately equals what physical constant?',
+          'a': 'HUBBLE'},
+         {'q': 'EARTH AND SPACE Short Answer: Eventually, some stars will begin to fuse helium into carbon. What is '
+               'the name of this process?',
+          'a': 'TRIPLE ALPHA PROCESS'},
+         {'q': 'EARTH AND SPACE Multiple Choice: What is the term for the minimum distance a satellite must orbit from '
+               'a planetary body without being torn apart by tidal forces?\n'
+               'W) Tidal limit\n'
+               'X) Roche limit\n'
+               'Y) Ring minimum\n'
+               'Z) Moon horizon',
+          'a': 'X'},
+         {'q': 'EARTH AND SPACE Short Answer: What term is given to the layer of an ocean or lake that extends from '
+               'the surface to the depth at which 99 percent of the surface light has been absorbed?',
+          'a': 'PHOTIC ZONE'},
+         {'q': 'EARTH AND SPACE Short Answer: What is the name for a cloud that looks like a pouch and often forms '
+               'hanging down from the underside of the anvil of a cumulonimbus cloud?',
+          'a': 'MAMMATUS'},
+         {'q': 'EARTH AND SPACE Multiple Choice: Comet McNaught visited in 2007 but is now on a path to leave the '
+               'solar system forever. Which of the following best describes its orbit?\n'
+               'W) Circular\n'
+               'X) Elliptical\n'
+               'Y) Parabolic\n'
+               'Z) Hyperbolic',
+          'a': 'Z'},
+         {'q': 'EARTH AND SPACE Short Answer: 21-centimeter radiation is observed throughout much of space because it '
+               'is generated from the neutral form of what element?',
+          'a': 'HYDROGEN'},
+         {'q': 'EARTH AND SPACE Short Answer: Scientists can study solar fusion via observations of certain '
+               'near-massless particles that travel through the Sun. What are these particles?',
+          'a': 'NEUTRINOS'},
+         {'q': 'EARTH AND SPACE Multiple Choice: Which of the following is the best approximation of how much time a '
+               'supergiant star can survive by way of silicon fusion?\n'
+               'W) 1 day\n'
+               'X) 1 year\n'
+               'Y) 1 thousand years\n'
+               'Y) 1 million years',
+          'a': 'W'},
+         {'q': 'EARTH AND SPACE Short Answer: In 1967, Jocelyn Bell detected a regularly pulsing radio signal, which '
+               'she called\n'
+               'LGM. What type of celestial object produced this signal?',
+          'a': 'PULSAR'},
+         {'q': 'EARTH AND SPACE Short Answer: What carbonate mineral is green in color and contains copper as its main '
+               'cation?',
+          'a': 'MALACHITE'},
+         {'q': 'EARTH AND SPACE Short Answer: Unlike reflectors, refracting telescopes may require an additional lens '
+               'to correct for what optical disturbance?',
+          'a': 'CHROMATIC ABERRATION'},
+         {'q': "EARTH AND SPACE Short Answer: The addition of what metal to the Earth's oceans has been proposed as a "
+               'potential way to decrease atmospheric carbon dioxide through the stimulation of photosynthetic '
+               'bacteria?',
+          'a': 'IRON'}]}
 
 
 # Initialize data structures (will be loaded from JSON)
