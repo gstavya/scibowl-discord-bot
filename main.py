@@ -3700,7 +3700,7 @@ async def leaderboard(ctx):
 
 @bot.command(name='commands')
 async def commands(ctx):
-    await ctx.send('**Commands**\n-q <subject> (phy, bio, chem, math, ess, energy)- Ask a question\n-a <answer> - Check your answer\n-points - Check your points\n-leaderboard - Check the leaderboard')
+    await ctx.send('**Commands**\n-q <subject> (phy, bio, chem, math, ess, energy) - Ask a question\n-a <answer> - Check your answer\n-points - Check your points\n-leaderboard - Check the leaderboard')
 
 token = str(os.getenv('DISCORD_BOT_TOKEN'))
 if not token:
