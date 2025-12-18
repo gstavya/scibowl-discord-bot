@@ -113,10 +113,10 @@ def save_data():
     except Exception as e:
         print(f"Error saving user_points: {e}")
 
-questions = {'keshav': [{'q': 'KESHAV Short Answer: What is Keshav\'s brother\'s name?', 'a': 'Sriram'}, {'q': 'KESHAV Multiple Choice: 'q': 'PHYSICS Multiple Choice: Which of the following thermodynamic properties is a path function?\n'
+questions = {'keshav': [{'q': 'KESHAV Short Answer: What is Keshav\'s brother\'s name?', 'a': 'Sriram'}, {'q': 'KESHAV Multiple Choice: Which of the following is Keshav\'s favorite color?\n'
                'W) Blue\n'
-               'X) Red [EN-thul-pee]\n'
-               'Y) Yellow [EN-troh-pee]\n'
+               'X) Red\n'
+               'Y) Yellow\n'
                'Z) Pink', 'a': 'Z'}],
     'phy': [{'q': 'PHYSICS Multiple Choice: Which of the following thermodynamic properties is a path function?\n'
                'W) Energy\n'
