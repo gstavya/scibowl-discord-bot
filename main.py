@@ -118,6 +118,7 @@ questions = {'keshav': [{'q': 'KESHAV Short Answer: What is Keshav\'s brother\'s
                'X) Red\n'
                'Y) Yellow\n'
                'Z) Pink', 'a': 'Z'}],
+            'nikhil': [{'q': 'NIKHIL Short Answer: How many questions did Nikhil answer in the 2025 Sandia Labs Regional Science Bowl Competition?', 'a': 'ZERO'}, {'q': 'NIKHIL Multiple Choice: What is Nikhil\'s last name? \n W) Sinner X) Sinna Y) Sinnha Z) Sinha', 'a': 'Z'}],
     'phy': [{'q': 'PHYSICS Multiple Choice: Which of the following thermodynamic properties is a path function?\n'
                'W) Energy\n'
                'X) Enthalpy [EN-thul-pee]\n'
