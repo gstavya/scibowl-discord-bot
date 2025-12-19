@@ -113,11 +113,61 @@ def save_data():
     except Exception as e:
         print(f"Error saving user_points: {e}")
 
-questions = {'keshav': [{'q': 'KESHAV Short Answer: What is Keshav\'s brother\'s name?', 'a': 'Sriram'}, {'q': 'KESHAV Multiple Choice: Which of the following is Keshav\'s favorite color?\n'
-               'W) Blue\n'
-               'X) Red\n'
-               'Y) Yellow\n'
-               'Z) Pink', 'a': 'Z'}],
+questions = {'keshav': [
+    {'q': "KESHAV Short Answer: What is Keshav's brother's name?", 'a': 'Sriram'},
+    {'q': "KESHAV Multiple Choice: Which of the following is Keshav's favorite color?\n"
+          "W) Blue\nX) Red\nY) Yellow\nZ) Pink", 'a': 'Z'},
+
+    {'q': 'KESHAV Short Answer: What does Keshav say he’ll do “in five minutes” but never does?', 'a': 'Start working'},
+    {'q': 'KESHAV Short Answer: What item does Keshav aggressively shake when it stops working?', 'a': 'Phone'},
+    {'q': 'KESHAV Short Answer: What lie does Keshav tell himself before sleeping?', 'a': 'Tomorrow I’ll wake up early'},
+    {'q': 'KESHAV Short Answer: What food does Keshav eat even when he’s not hungry?', 'a': 'Chips'},
+    {'q': 'KESHAV Short Answer: What is Keshav’s toxic personality trait?', 'a': 'Confidence'},
+    {'q': 'KESHAV Short Answer: What noise does Keshav make when something mildly inconveniences him?', 'a': 'Sigh'},
+    {'q': 'KESHAV Short Answer: What does Keshav Google instead of solving the problem?', 'a': 'Is this normal'},
+    {'q': 'KESHAV Short Answer: What does Keshav forget the moment he enters a room?', 'a': 'Why he came'},
+    {'q': 'KESHAV Short Answer: What does Keshav dramatically announce before doing nothing?', 'a': 'Alright'},
+    {'q': 'KESHAV Short Answer: What skill does Keshav think he has after one YouTube video?', 'a': 'Expertise'},
+
+    {'q': 'KESHAV Multiple Choice: What would immediately ruin Keshav’s day?\n'
+          'W) Dead phone\nX) Slow WiFi\nY) Slight criticism\nZ) All of the above', 'a': 'Z'},
+    {'q': 'KESHAV Multiple Choice: What does Keshav pretend not to hear?\n'
+          'W) His name\nX) Alarm\nY) Responsibility\nZ) All of them', 'a': 'Z'},
+    {'q': 'KESHAV Multiple Choice: Which phrase does Keshav use before making things worse?\n'
+          'W) Trust me\nX) I got this\nY) It’s fine\nZ) All of the above', 'a': 'Z'},
+    {'q': 'KESHAV Multiple Choice: What would Keshav absolutely overthink?\n'
+          'W) A text reply\nX) Eye contact\nY) Tone\nZ) Everything', 'a': 'Z'},
+    {'q': 'KESHAV Multiple Choice: Which job would Keshav quit on day one?\n'
+          'W) Accountant\nX) Therapist\nY) NASA engineer\nZ) All of them', 'a': 'Z'},
+
+    {'q': 'KESHAV Short Answer: What does Keshav call “basically done” even though it isn’t?', 'a': 'Homework'},
+    {'q': 'KESHAV Short Answer: What is Keshav’s greatest enemy?', 'a': 'Deadlines'},
+    {'q': 'KESHAV Short Answer: What sound triggers Keshav’s fight-or-flight response?', 'a': 'Email notification'},
+    {'q': 'KESHAV Short Answer: What does Keshav do when confused?', 'a': 'Nod'},
+    {'q': 'KESHAV Short Answer: What does Keshav claim he’ll remember without writing down?', 'a': 'Everything'},
+    {'q': 'KESHAV Short Answer: What is Keshav’s strongest academic skill?', 'a': 'Guessing'},
+    {'q': 'KESHAV Short Answer: What does Keshav call a 3-hour break?', 'a': 'Short rest'},
+    {'q': 'KESHAV Short Answer: What does Keshav open instead of the app he needs?', 'a': 'Instagram'},
+    {'q': 'KESHAV Short Answer: What does Keshav say after messing up?', 'a': 'Interesting'},
+    {'q': 'KESHAV Short Answer: What does Keshav blame when things go wrong?', 'a': 'Timing'},
+
+    {'q': 'KESHAV Multiple Choice: What would Keshav bring to a serious meeting?\n'
+          'W) Confidence\nX) Zero preparation\nY) Coffee\nZ) All of the above', 'a': 'Z'},
+    {'q': 'KESHAV Multiple Choice: Which superpower would Keshav waste immediately?\n'
+          'W) Time travel\nX) Mind reading\nY) Teleportation\nZ) Any of them', 'a': 'Z'},
+    {'q': 'KESHAV Multiple Choice: What does Keshav say when he has no idea?\n'
+          'W) Yeah\nX) Right\nY) Exactly\nZ) All of the above', 'a': 'Z'},
+    {'q': 'KESHAV Multiple Choice: What would Keshav accidentally procrastinate?\n'
+          'W) Studying\nX) Sleeping\nY) Relaxing\nZ) Everything', 'a': 'Z'},
+    {'q': 'KESHAV Multiple Choice: What does Keshav believe fixes all problems?\n'
+          'W) Sleep\nX) Food\nY) Ignoring it\nZ) Time', 'a': 'Y'},
+
+    {'q': 'KESHAV Short Answer: What is Keshav’s unofficial motto?', 'a': 'It’ll work out'},
+    {'q': 'KESHAV Short Answer: What is Keshav doing instead of this question?', 'a': 'Avoiding something important'},
+    {'q': 'KESHAV Short Answer: What does Keshav call “productive”?', 'a': 'Thinking about working'},
+    {'q': 'KESHAV Short Answer: What would Keshav Google during an exam?', 'a': 'Can professors see confidence'},
+    {'q': 'KESHAV Short Answer: What does Keshav say before opening a risky link?', 'a': 'It’s probably fine'}
+],
             'nikhil': [{'q': 'NIKHIL Short Answer: How many questions did Nikhil answer in the 2025 Sandia Labs Regional Science Bowl Competition?', 'a': 'ZERO'}, {'q': 'NIKHIL Multiple Choice: What is Nikhil\'s last name? \n W) Sinner X) Sinna Y) Sinnha Z) Sinha', 'a': 'Z'}],
     'phy': [{'q': 'PHYSICS Multiple Choice: Which of the following thermodynamic properties is a path function?\n'
                'W) Energy\n'
